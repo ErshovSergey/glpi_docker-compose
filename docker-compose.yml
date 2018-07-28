@@ -1,0 +1,73 @@
+version: '2'
+services:
+  mysql-data:
+    image: busybox
+    container_name: "${GLPI_NAME}_mysql-data"
+    volumes:
+      - "${GLPI_PATH}/mysql_data:/var/lib/mysql"
+
+  mysql:
+    image: mysql
+    volumes_from:
+      - mysql-data
+    restart: always
+    container_name: "${GLPI_NAME}_mysql"
+    env_file:
+      - ./mysql.env
+    depends_on:
+      - mysql-data
+    logging:
+      driver: none
+
+  glpi-data:
+    image: busybox
+    volumes: 
+      - "${GLPI_PATH}/html:/var/www/html"
+    container_name: "${GLPI_NAME}_glpi-data"
+
+  glpi:
+    environment:
+      - GLPI_VERSION=${GLPI_VERSIONI}
+      - GLPI_upload_max_filesize=${GLPI_upload_max_filesize}
+      - GLPI_post_max_size=${GLPI_post_max_size}
+      - GLPI_memory_limit=${GLPI_memory_limit}
+      - GLPI_max_execution_time=${GLPI_max_execution_time}
+    build:
+      context: .
+      dockerfile: glpi/Dockerfile
+    hostname: glpi
+    volumes_from:
+      - glpi-data
+    container_name: "${GLPI_NAME}_glpi"
+    links:
+      - mysql:mysql
+    ports:
+      -  "${GLPI_HTTP_IP_PORT}:80"
+    depends_on:
+      - mysql
+      - glpi-data
+    restart: always
+    logging:
+      driver: none
+
+#  bareos-fd:
+#    build:
+#      context: ./bareos-fd/
+#      dockerfile: Dockerfile
+#    volumes_from:
+#      - glpi-data:ro
+#    volumes:
+#      - /mnt/sdb/DOCKER_DATA/docker_client_bareos/etc-bareos:/etc/bareos      
+#    links:
+#      - mysql:mysql
+#    ports:
+#      -  "192.168.100.240:9192:9102"
+#    depends_on:
+#      - mysql
+#      - glpi-data
+#    restart: always
+#    logging:
+#      driver: none
+
+
+    
