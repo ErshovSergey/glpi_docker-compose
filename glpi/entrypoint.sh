@@ -41,9 +41,9 @@ chown www-data:crontab /var/spool/cron/crontabs/www-data
 
 #/etc/msmtprc
 
-if [ ! "$(ls /etc/msmtprc)" ];
+if [ ! "$(ls /var/www/html/msmtprc)" ];
 then
-  cat <<EOF > /etc/msmtprc
+  cat <<EOF > /var/www/html/msmtprc
   # settings msmtp
   account via_gmail
   host            smtp.gmail.com
