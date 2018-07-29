@@ -50,8 +50,11 @@ wget https://forge.glpi-project.org/attachments/download/2235/glpi-archires-2.5.
 tar -xzvf glpi-archires-2.5.1.tar.gz
 mv archires /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
 
-
-
+## timelineticket
+# https://github.com/pluginsGLPI/timelineticket/releases
+wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.2%2B1.0/glpi-timelineticket-9.2.1.0.tar.gz
+tar -xzvf glpi-timelineticket-9.2.1.0.tar.gz
+mv timelineticket /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
 
 
 

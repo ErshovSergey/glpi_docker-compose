@@ -67,7 +67,7 @@ fi
 
 ## php
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
-echo sed -i "s|^upload_max_filesize .*|upload_max_filesize = $GLPI_upload_max_filesize|" /etc/php/7.0/apache2/php.ini
+sed -i "s|^upload_max_filesize .*|upload_max_filesize = $GLPI_upload_max_filesize|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^post_max_size .*|post_max_size = $GLPI_post_max_size|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^memory_limit .*|memory_limit = $GLPI_memory_limit|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^max_execution_time .*|max_execution_time = $GLPI_max_execution_time|" /etc/php/7.0/apache2/php.ini
