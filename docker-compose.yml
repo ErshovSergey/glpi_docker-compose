@@ -50,24 +50,26 @@ services:
     logging:
       driver: none
 
-#  bareos-fd:
-#    build:
-#      context: ./bareos-fd/
-#      dockerfile: Dockerfile
-#    volumes_from:
-#      - glpi-data:ro
-#    volumes:
-#      - /mnt/sdb/DOCKER_DATA/docker_client_bareos/etc-bareos:/etc/bareos      
-#    links:
-#      - mysql:mysql
-#    ports:
-#      -  "192.168.100.240:9192:9102"
-#    depends_on:
-#      - mysql
-#      - glpi-data
-#    restart: always
-#    logging:
-#      driver: none
+  bareos-fd:
+    build:
+      context: .
+      dockerfile: bareos-fd/Dockerfile
+    hostname: bareos-fd
+    container_name: "${GLPI_NAME}_bareos-fd"
+    volumes_from:
+      - glpi-data:ro
+    volumes:
+      - "${GLPI_PATH}/client_bareos:/etc/bareos"
+    links:
+      - mysql:mysql
+    ports:
+      -  "192.168.100.240:9192:9102"
+    depends_on:
+      - mysql
+      - glpi-data
+    restart: always
+    logging:
+      driver: none
 
 
     

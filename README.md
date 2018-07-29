@@ -5,9 +5,10 @@
 1. Создайте папку для хранения файлов glpi.
 Струкктура папки
 glpi
-   \msmtprc      настройки msmtp для отправки почты
-   \html\        файлы glpi
-   \mysql_data\  файлы MySQL
+   \msmtprc         настройки msmtp для отправки почты
+   \html\           файлы glpi
+   \mysql_data\     файлы MySQL
+   \client_bareos   файлы клиента bareos 
 
 В файле .env укажите необходимые данные. Если файла нет то необходимо скопировать .env-default в .env.
 Параметры mysql сервера укажите в файле mysql.env. Если файла нет то необходимо скопировать mysql.env-default в mysql.env.
