@@ -38,35 +38,6 @@ echo "*/5 * * * * /usr/bin/php /var/www/html/glpi/front/cron.php > /dev/null" >>
 chmod 0600 /var/spool/cron/crontabs/www-data
 chown www-data:crontab /var/spool/cron/crontabs/www-data
 
-# отправка почты
-#/etc/msmtprc
-if [ ! "$(ls /var/www/html/msmtprc)" ];
-then
-  cat <<EOF > /var/www/html/msmtprc
-# settings msmtp
-
-defaults
-auth            on
-tls             on
-tls_certcheck   off
-logfile         /var/www/html/msmtp.log
-
-account         yandex
-host            smtp.yandex.ru
-port            587
-from            XXXXXXXXXXXXXXXXX@yandex.ru
-user            XXXXXXXXXXXXXXXXX@yandex.ru
-password        YYYYYYYYYYYY
-
-
-# Set a default account
-account default : yandex
-
-EOF
-else
-  echo "/etc/msmtprc already exist"
-fi
-
 ## php - тюнинг
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
 sed -i "s|^upload_max_filesize .*|upload_max_filesize = $GLPI_upload_max_filesize|" /etc/php/7.0/apache2/php.ini

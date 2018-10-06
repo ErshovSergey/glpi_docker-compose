@@ -30,16 +30,10 @@ RUN cd /tmp/ \
     php-xml \
     php-apcu-bc \
     php-cas \
-    cron msmtp \
+    cron \
     rsyslog \
     wget \
     graphviz \
-  ##  msmtprc
-  && rm -f /etc/msmtprc \
-  && ln -sf /var/www/html/msmtprc /etc/msmtprc \
-  # replace sendmail
-  && rm /usr/sbin/sendmail \
-  && ln -s /usr/bin/msmtp /usr/sbin/sendmail \
   ## clean
   && apt-get autoremove -qqy \
   && apt-get clean \
