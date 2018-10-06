@@ -36,6 +36,7 @@ services:
       context: .
       dockerfile: glpi/Dockerfile
     hostname: glpi
+#    network_mode: host
     volumes_from:
       - glpi-data
     container_name: "${GLPI_NAME}_glpi"
@@ -57,7 +58,8 @@ services:
     hostname: bareos-fd
     container_name: "${GLPI_NAME}_bareos-fd"
     volumes_from:
-      - glpi-data:ro
+#      - glpi-data:ro
+      - glpi-data
     volumes:
       - "${GLPI_PATH}/client_bareos:/etc/bareos"
     links:
@@ -72,4 +74,3 @@ services:
       driver: none
 
 
-    

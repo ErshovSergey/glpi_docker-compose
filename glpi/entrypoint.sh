@@ -2,7 +2,6 @@
 
 FOLDER_GLPI=glpi/
 FOLDER_WEB=/var/www/html/
-#GLPI_VERSION=feik
 
 #check if TLS_REQCERT is present
 if !(grep -q "TLS_REQCERT" /etc/ldap/ldap.conf)
@@ -11,7 +10,7 @@ then
         echo -e "TLS_REQCERT\tnever" >> /etc/ldap/ldap.conf
 fi
 
-# устанавливаем последний релиз если ещё не установлено
+# если ничего не установлено - устанавливаем
 if [ "$(ls ${FOLDER_WEB}${FOLDER_GLPI})" ];
 then
 	echo "GLPI is already installed"
@@ -39,42 +38,46 @@ echo "*/5 * * * * /usr/bin/php /var/www/html/glpi/front/cron.php > /dev/null" >>
 chmod 0600 /var/spool/cron/crontabs/www-data
 chown www-data:crontab /var/spool/cron/crontabs/www-data
 
+# отправка почты
 #/etc/msmtprc
-
 if [ ! "$(ls /var/www/html/msmtprc)" ];
 then
   cat <<EOF > /var/www/html/msmtprc
-  # settings msmtp
-  account via_gmail
-  host            smtp.gmail.com
-  from            **************@gmail.com
-  user            **************@gmail.com
-  password        **************
-  port            587
-  auth            on
-  tls             on
-  tls_starttls    on
-  tls_certcheck   off
-  protocol        smtp
-  logfile         /var/log/msmtp.log
+# settings msmtp
 
-  # Set a default account
-  account default : via_gmail
+defaults
+auth            on
+tls             on
+tls_certcheck   off
+logfile         /var/www/html/msmtp.log
+
+account         yandex
+host            smtp.yandex.ru
+port            587
+from            XXXXXXXXXXXXXXXXX@yandex.ru
+user            XXXXXXXXXXXXXXXXX@yandex.ru
+password        YYYYYYYYYYYY
+
+
+# Set a default account
+account default : yandex
+
 EOF
 else
   echo "/etc/msmtprc already exist"
 fi
 
-## php
+## php - тюнинг
 echo "ServerName localhost" >> /etc/apache2/apache2.conf
 sed -i "s|^upload_max_filesize .*|upload_max_filesize = $GLPI_upload_max_filesize|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^post_max_size .*|post_max_size = $GLPI_post_max_size|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^memory_limit .*|memory_limit = $GLPI_memory_limit|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^max_execution_time .*|max_execution_time = $GLPI_max_execution_time|" /etc/php/7.0/apache2/php.ini
 
-## Zend OPcache
-echo "opcache.memory_consumption = 128" >> /etc/php/7.0/mods-available/opcache.ini
+## Zend OPcache - тюнинг
+echo "opcache.memory_consumption = 256" >> /etc/php/7.0/mods-available/opcache.ini
 
+## тюнниг
 echo "apc.shm_size=64M" >> /etc/php/7.0/mods-available/apcu.ini
 
 service cron start
