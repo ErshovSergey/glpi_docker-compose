@@ -21,7 +21,7 @@ services:
 
   glpi-data:
     image: busybox
-    volumes: 
+    volumes:
       - "${GLPI_PATH}/html:/var/www/html"
     container_name: "${GLPI_NAME}_glpi-data"
 
@@ -36,7 +36,6 @@ services:
       context: .
       dockerfile: glpi/Dockerfile
     hostname: glpi
-#    network_mode: host
     volumes_from:
       - glpi-data
     container_name: "${GLPI_NAME}_glpi"
@@ -58,14 +57,13 @@ services:
     hostname: bareos-fd
     container_name: "${GLPI_NAME}_bareos-fd"
     volumes_from:
-#      - glpi-data:ro
       - glpi-data
     volumes:
       - "${GLPI_PATH}/client_bareos:/etc/bareos"
     links:
       - mysql:mysql
     ports:
-      -  "192.168.100.240:9192:9102"
+      - "${BAREOSFD_HTTP_IP_PORT}:9102"
     depends_on:
       - mysql
       - glpi-data
