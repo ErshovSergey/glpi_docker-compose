@@ -1,34 +1,51 @@
-# Project to deploy GLPI with docker
+# Проект для запуска GLPI в контейнерах docker
 
-Устанавливаем и запускаем GLPI instance с docker.
+## Устанавливаем и запускаем GLPI instance с docker.
+### Клонируем проект
+```shell
+git clone https://github.com/ErshovSergey/glpi_docker-compose.git
+```
 
-1. Создайте папку для хранения файлов glpi.
+### 1. Создайте папку для хранения файлов glpi.
 Струкктура папки
+```shell
 glpi
    \msmtprc         настройки msmtp для отправки почты
    \html\           файлы glpi
    \mysql_data\     файлы MySQL
    \client_bareos   файлы клиента bareos 
+```
 
+### 2. Измените настройки
 В файле .env укажите необходимые данные. Если файла нет то необходимо скопировать .env-default в .env.
 Параметры mysql сервера укажите в файле mysql.env. Если файла нет то необходимо скопировать mysql.env-default в mysql.env.
 
 Для подлкючения к sql серверу указать mysql, glpi и пароль из mysql.env.
 
-Параметры docker-compose
+### Команды
+Посмотреть параметры docker-compose
+```shell
 docker-compose config
-
+```
 Собрать и запустить compomose
+```shell
 docker-compose up --build -d
-
+```
 Остановить и удалить 
+```shell
 docker-compose down
-
+```
 Посмотреть состояние
+```shell
 docker-compose ps
+```
+Логи работы glpi
+В файлах 
+/var/www/html/glpi/files/_log/php-errors.log
+/var/www/html/glpi/files/_log/mail.log
+/var/www/html/glpi/files/_log/mail-error.log
 
-
-Устанавливаем plugins
+## Устанавливаем plugins
 #Plugins
 
 ## fusioninventory-for-glpi 
