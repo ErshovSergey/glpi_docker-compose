@@ -33,8 +33,8 @@ services:
       - GLPI_memory_limit=${GLPI_memory_limit}
       - GLPI_max_execution_time=${GLPI_max_execution_time}
     build:
-      context: .
-      dockerfile: glpi/Dockerfile
+      context: glpi
+      dockerfile: Dockerfile
     hostname: glpi
     volumes_from:
       - glpi-data
@@ -52,8 +52,8 @@ services:
 
   bareos-fd:
     build:
-      context: .
-      dockerfile: bareos-fd/Dockerfile
+      context: bareos-fd
+      dockerfile: Dockerfile
     hostname: bareos-fd
     container_name: "${GLPI_NAME}_bareos-fd"
     volumes_from:

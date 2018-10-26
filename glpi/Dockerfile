@@ -8,7 +8,6 @@ RUN cd /tmp/ \
 # локаль
   && apt-get install -yqq  --no-install-recommends --no-install-suggests locales apt-utils
 
-# локаль
 ENV LANG='ru_RU.UTF-8' LANGUAGE='ru_RU.UTF-8' LC_ALL='ru_RU.UTF-8'
 RUN echo ru_RU.UTF-8 UTF-8 >> /etc/locale.gen && locale-gen
 
@@ -39,6 +38,6 @@ RUN cd /tmp/ \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/*
 
-COPY glpi/entrypoint.sh /opt/
+COPY entrypoint.sh /opt/
 RUN chmod +x /opt/entrypoint.sh
 ENTRYPOINT ["/opt/entrypoint.sh"]

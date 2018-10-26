@@ -45,11 +45,14 @@ sed -i "s|^post_max_size .*|post_max_size = $GLPI_post_max_size|" /etc/php/7.0/a
 sed -i "s|^memory_limit .*|memory_limit = $GLPI_memory_limit|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^max_execution_time .*|max_execution_time = $GLPI_max_execution_time|" /etc/php/7.0/apache2/php.ini
 
+
+
 ## Zend OPcache - тюнинг
 echo "opcache.memory_consumption = 256" >> /etc/php/7.0/mods-available/opcache.ini
 
 ## тюнниг
 echo "apc.shm_size=64M" >> /etc/php/7.0/mods-available/apcu.ini
+
 
 service cron start
 trap "service cron stop; service rsyslog stop; exit" SIGINT SIGTERM

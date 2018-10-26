@@ -27,9 +27,7 @@ RUN export DEBIAN_FRONTEND='noninteractive' \
   && rm -rf /var/lib/apt/lists/* /tmp/*
 
 
-COPY bareos-fd/bareos-fd.conf /opt/bareos-fd.conf
-
-COPY bareos-fd/entrypoint.sh /opt/
+COPY [ "add/", "/" ]
 RUN chmod +x /opt/entrypoint.sh
 ENTRYPOINT ["/opt/entrypoint.sh"]
 
