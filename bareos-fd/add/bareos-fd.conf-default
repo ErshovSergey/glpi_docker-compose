@@ -1,0 +1,21 @@
+FileDaemon {
+  Name = NAME_glpi-fd
+  Maximum Concurrent Jobs = 1
+  Compatible = no 
+  Description = "Clent bareos for glpi"
+}
+
+#
+# List Directors who are permitted to contact this File daemon
+#
+Director {
+  Name = bareos-dir
+  Password = "PASSWORD_FOR_BAREOS_DIR"
+}
+
+# Send all messages except skipped files back to Director
+Messages {
+  Name = Standard
+  director = NAME_BAREOS_DIR = all, !skipped, !restored
+}
+

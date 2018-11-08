@@ -5,3 +5,5 @@
 *~
 .env
 mysql.env
+bareos-fd/add/bareos-fd.conf
+bareos-fd/add/glpi.conf
