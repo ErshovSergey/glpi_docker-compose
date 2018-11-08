@@ -31,6 +31,9 @@ docker-compose config
 ```shell
 docker-compose up --build -d
 ```
+Настройка доступа mysql 
+![Settings glpi-mysql](./glpi-mysql_settings.png)
+
 Остановить и удалить 
 ```shell
 docker-compose down
@@ -41,9 +44,11 @@ docker-compose ps
 ```
 Логи работы glpi
 В файлах 
+```
 /var/www/html/glpi/files/_log/php-errors.log
 /var/www/html/glpi/files/_log/mail.log
 /var/www/html/glpi/files/_log/mail-error.log
+```
 
 ## Устанавливаем plugins
 #Plugins
