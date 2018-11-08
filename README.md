@@ -17,10 +17,10 @@ glpi
 ```
 
 ### 2. Измените настройки
-В файле .env укажите необходимые данные. Если файла нет то необходимо скопировать .env-default в .env.
-Параметры mysql сервера укажите в файле mysql.env. Если файла нет то необходимо скопировать mysql.env-default в mysql.env.
+В файле .env укажите необходимые данные.  
+Если файла нет то необходимо скопировать .env-default в .env  
+Параметры mysql сервера укажите в файле mysql.env. Если файла нет то необходимо скопировать mysql.env-default в mysql.env  
 
-Для подлкючения к sql серверу указать mysql, glpi и пароль из mysql.env.
 
 ### Команды
 Посмотреть параметры docker-compose
@@ -32,17 +32,18 @@ docker-compose config
 docker-compose up --build -d
 ```
 Настройка доступа mysql 
-![Settings glpi-mysql](./glpi-mysql_settings.png)
+![Settings glpi-mysql](./glpi-mysql_settings.png)  
+Для подключения к sql серверу указать **mysql**, **glpi** и пароль из **mysql.env**.
 
-Остановить и удалить 
+Остановить и удалить  
 ```shell
 docker-compose down
 ```
-Посмотреть состояние
+Посмотреть состояние  
 ```shell
 docker-compose ps
 ```
-Логи работы glpi
+Логи работы glpi  
 В файлах 
 ```
 /var/www/html/glpi/files/_log/php-errors.log
