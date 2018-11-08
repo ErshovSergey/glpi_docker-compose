@@ -50,6 +50,11 @@ docker-compose ps
 /var/www/html/glpi/files/_log/mail-error.log
 ```
 
+### [Интеграция с Active Directory](./GLPI_ActiveDirectory_Authentication_Setting.md)
+
+
+
+
 ## Устанавливаем plugins
 #Plugins
 
