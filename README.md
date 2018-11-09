@@ -1,25 +1,49 @@
 # Проект для запуска GLPI в контейнерах docker
 
-## Устанавливаем и запускаем GLPI instance с docker.
+## Устанавливаем и запускаем GLPI instance в docker.
+Всего 4 контейнера:  
+- с пакетами для запуска glpi  
+- контейнер MySQL(официальный)  
+- с файлами glpi  
+- контейнер с файлами базы MySQL  
+```# docker ps -a  
+CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                     PORTS                      NAMES  
+1b8997776942        glpihostname_glpi    "/opt/entrypoint.sh"     6 minutes ago       Up 6 minutes               192.168.XXX.Х:80->80/tcp   glpi.hostname.ru_glpi  
+f3eb793bfbc6        mysql:5.7            "docker-entrypoint.s…"   6 minutes ago       Up 6 minutes               3306/tcp, 33060/tcp        glpi.hostname.ru_mysql  
+6e499f87605c        busybox              "sh"                     6 minutes ago       Exited (0) 6 minutes ago                              glpi.hostname.ru_glpi-data  
+2a69a6982e6d        busybox              "sh"                     6 minutes ago       Exited (0) 6 minutes ago                              glpi.hostname.ru_mysql-data  
+```
+
+Размеры образов
+``` # docker images  
+REPOSITORY           TAG                 IMAGE ID            CREATED              SIZE  
+glpihostname_glpi   latest              b87c1c8ff082        About a minute ago   372MB  
+mysql                5.7                 702fb0b7837f        2 weeks ago          372MB  
+debian               stretch             be2868bebaba        3 weeks ago          101MB  
+busybox              latest              59788edf1f3e        5 weeks ago          1.15MB
+```  
+
+
 ### Клонируем проект
 ```shell
 git clone https://github.com/ErshovSergey/glpi_docker-compose.git
 ```
 
-### 1. Создайте папку для хранения файлов glpi.
-Струкктура папки
+### Хранение данных
+Структура папки
 ```shell
 glpi
-   \msmtprc         настройки msmtp для отправки почты
-   \html\           файлы glpi
-   \mysql_data\     файлы MySQL
-   \client_bareos   файлы клиента bareos 
+   \msmtprc         настройки msmtp для отправки почты, не используется
+   \html\           файлы glpi - файлы дистрибутива
+   \mysql_data\     файлы MySQL - файлы БД
+   \client_bareos   файлы настроек клиента bareos 
 ```
 
 ### 2. Измените настройки
 В файле .env укажите необходимые данные.  
 Если файла нет то необходимо скопировать .env-default в .env  
-Параметры mysql сервера укажите в файле mysql.env. Если файла нет то необходимо скопировать mysql.env-default в mysql.env  
+Параметры mysql сервера укажите в файле mysql.env.  
+Если файла нет то необходимо скопировать mysql.env-default в mysql.env  
 
 
 ### Команды
@@ -31,10 +55,6 @@ docker-compose config
 ```shell
 docker-compose up --build -d
 ```
-Настройка доступа mysql 
-![Settings glpi-mysql](./glpi-mysql_settings.png)  
-Для подключения к sql серверу указать **mysql**, **glpi** и пароль из **mysql.env**.
-
 Остановить и удалить  
 ```shell
 docker-compose down
@@ -50,13 +70,19 @@ docker-compose ps
 /var/www/html/glpi/files/_log/mail.log
 /var/www/html/glpi/files/_log/mail-error.log
 ```
+### Дальнейшая настройка производится через браузер.
+Настройка доступа mysql 
+![Settings glpi-mysql](./glpi-mysql_settings.png)  
+Для подключения к sql серверу указать **mysql**, **glpi** и пароль из **mysql.env**.
 
 ### [Интеграция с Active Directory](./doc/GLPI_ActiveDirectory_Authentication_Setting.md)
 
-### Установка plugins
-[fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md)  
-[Картографий positions](./doc/plugins_positions.md)  
-[Network Architecture - archires](./doc/plugins_NetworkArchitecture-archires.md)  
+### Plugins
+Расширить функционал можно с помощью плагинов.
+#### Установка plugins
+[fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md) - агент инвентаризации  
+[Картографий positions](./doc/plugins_positions.md) - привязка Активов к положению на схеме  
+[Network Architecture - archires](./doc/plugins_NetworkArchitecture-archires.md) - Сетевые архитектуры  
 
 
 
