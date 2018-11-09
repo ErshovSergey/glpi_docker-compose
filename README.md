@@ -53,31 +53,12 @@ docker-compose ps
 
 ### [Интеграция с Active Directory](./GLPI_ActiveDirectory_Authentication_Setting.md)
 
+### Установка plugins
+[fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md)
+[Network Architecture - archires](./doc/plugins_Network Architecture - archires.md)
+[Картографий positions](./doc/plugins_positions.md)
 
 
-
-## Устанавливаем plugins
-#Plugins
-
-## fusioninventory-for-glpi 
-# 
-# https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.2%2B2.1/fusioninventory-9.2+2.1.tar.bz2
-wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.2%2B2.1/fusioninventory-9.2+2.1.tar.bz2
-tar xvjf  fusioninventory-9.2+2.1.tar.bz2
-mv fusioninventory /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
-chown -R www-data:www-data /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/*
-
-## positions - Cartographies
-# https://github.com/InfotelGLPI/positions/releases
-wget https://github.com/InfotelGLPI/positions/releases/download/4.4.0/glpi-positions-4.4.0.tar.gz
-tar -xzf glpi-positions-4.4.0.tar.gz
-mv positions /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
-
-## archires - нет для версии 9.3
-# https://forge.glpi-project.org/projects/archires
-wget https://forge.glpi-project.org/attachments/download/2235/glpi-archires-2.5.1.tar.gz
-tar -xzvf glpi-archires-2.5.1.tar.gz
-mv archires /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
 
 ## timelineticket - нет для версии 9.3
 # https://github.com/pluginsGLPI/timelineticket/releases
@@ -117,11 +98,6 @@ http://glpi-install.readthedocs.io/en/latest/command-line.html
 wget https://github.com/glpi-project/glpi/releases/download/9.3.0/glpi-9.3.tgz
 tar zxvf glpi-9.3.tgz -C /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/
 chown -R www-data:www-data /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/
-
-
-
-
-
 
 
 для обновления
