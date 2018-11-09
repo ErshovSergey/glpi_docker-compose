@@ -1,15 +1,15 @@
 
 ### Интеграция с Active directory (ldap)
 #### подключение к Active Directory
-Setup \ Authententifition 
-LDAP directories
+**Setup \ Authententifition** 
+**LDAP directories**
 Добавляем новое подключение, заполняем поля:
 ![Settings LDAP directory](./glpi-LDAP_directory.png)
 Name: имя подключения соединения - произвольно, но так чтобы было понятно что это и зачем
 
 Default server: **yes**  
 Active: **yes**  
-Server: fqdn-имя вашего контроллера домена или IP (например dc01.Acti.dir), но так не получилось в тесте, получилось только с ip адресом одного из котроллеров.  
+Server: fqdn-имя вашего контроллера домена или IP (например dc01.Acti.dir), но так не получилось в тесте, получилось только с ip адресом одного из контроллеров.  
 Port (default=389): **389**  
 Connection filter: **(&(objectClass=user)(objectCategory=person)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))** - этот фильтр будет отображать только активные (включенные) учетные записи  
 BaseDN: **DC=DomainName,DC=local** - будет искать по всему домену. Если нужно ограничить область поиска - укажите конкретный OU, например **OU=IT,OU=Users,DC=DomainName,DC=local** (без пробелов)  
