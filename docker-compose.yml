@@ -27,7 +27,7 @@ services:
 
   glpi:
     environment:
-      - GLPI_VERSION=${GLPI_VERSIONI}
+      - GLPI_VERSION=${GLPI_VERSION}
       - GLPI_upload_max_filesize=${GLPI_upload_max_filesize}
       - GLPI_post_max_size=${GLPI_post_max_size}
       - GLPI_memory_limit=${GLPI_memory_limit}
@@ -50,26 +50,26 @@ services:
     logging:
       driver: none
 
-  bareos-fd:
-    build:
-      context: bareos-fd
-      dockerfile: Dockerfile
-    hostname: bareos-fd
-    container_name: "${GLPI_NAME}_bareos-fd"
-    volumes_from:
-      - glpi-data
-    volumes:
-      - "${GLPI_PATH}/client_bareos:/etc/bareos"
-    links:
-      - mysql:mysql
-    ports:
-      - "${BAREOSFD_HTTP_IP_PORT}:9102"
-    depends_on:
-      - mysql
-      - glpi-data
-    restart: always
-    logging:
-      driver: none
+#  bareos-fd:
+#    build:
+#      context: bareos-fd
+#      dockerfile: Dockerfile
+#    hostname: bareos-fd
+#    container_name: "${GLPI_NAME}_bareos-fd"
+#    volumes_from:
+#      - glpi-data
+#    volumes:
+#      - "${GLPI_PATH}/client_bareos:/etc/bareos"
+#    links:
+#      - mysql:mysql
+#    ports:
+#      - "${BAREOSFD_HTTP_IP_PORT}:9102"
+#    depends_on:
+#      - mysql
+#      - glpi-data
+#    restart: always
+#    logging:
+#      driver: none
 
 
 #  lets-nginx:
