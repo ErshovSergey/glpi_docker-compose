@@ -54,9 +54,9 @@ docker-compose ps
 ### [Интеграция с Active Directory](./GLPI_ActiveDirectory_Authentication_Setting.md)
 
 ### Установка plugins
-[fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md)
-[Network Architecture - archires](./doc/plugins_Network Architecture - archires.md)
-[Картографий positions](./doc/plugins_positions.md)
+[fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md)  
+[Network Architecture - archires](./doc/plugins_Network Architecture-archires.md)  
+[Картографий positions](./doc/plugins_positions.md)  
 
 
 
