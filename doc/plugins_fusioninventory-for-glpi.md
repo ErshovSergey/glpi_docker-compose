@@ -9,4 +9,4 @@
 `mv fusioninventory mv fusioninventory /<Путь до папки glpi>/html/glpi/plugins/`  
 `chown -R www-data:www-data /<Путь до папки glpi>/html/glpi/plugins/fusioninventory`  
 
-Далее необходимо инстлировать и активировать плагин.
+Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.
