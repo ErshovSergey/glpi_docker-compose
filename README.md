@@ -60,27 +60,27 @@ docker-compose ps
 
 
 
-Разобрать!!!
+# Разобрать!!!
 ## timelineticket
-# https://github.com/pluginsGLPI/timelineticket/releases
+ https://github.com/pluginsGLPI/timelineticket/releases
 wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.2%2B1.0/glpi-timelineticket-9.2.1.0.tar.gz
 tar -xzvf glpi-timelineticket-9.2.1.0.tar.gz
 mv timelineticket /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
 
 ##  accounts
-# https://github.com/InfotelGLPI/accounts
+ https://github.com/InfotelGLPI/accounts
 wget https://github.com/InfotelGLPI/accounts/releases/download/2.4.0/glpi-accounts-2.4.0.tar.gz
 tar -xzvf glpi-accounts-2.3.2.tar.gz
 mv accounts /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
 
 ## environment
-# https://github.com/InfotelGLPI/environment/
+ https://github.com/InfotelGLPI/environment/
 wget https://github.com/InfotelGLPI/environment/releases/download/2.2.0/glpi-environment-2.2.0.tar.gz
 tar -xzvf glpi-environment-2.1.0.tar.gz
 mv environment-master /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
 	
 ## appliances - нет для версии 9.3
-# https://forge.glpi-project.org/projects/appliances
+ https://forge.glpi-project.org/projects/appliances
 wget https://forge.glpi-project.org/attachments/download/2233/glpi-appliances-2.3.2.tar.gz
 tar -xzvf glpi-appliances-2.3.2.tar.gz
 mv appliances /mnt/sdb/DOCKER_DATA/glpi_glpi.erchov.ru/html/glpi/plugins/
