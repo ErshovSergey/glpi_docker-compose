@@ -51,7 +51,7 @@ docker-compose ps
 /var/www/html/glpi/files/_log/mail-error.log
 ```
 
-### [Интеграция с Active Directory](./GLPI_ActiveDirectory_Authentication_Setting.md)
+### [Интеграция с Active Directory](./doc/GLPI_ActiveDirectory_Authentication_Setting.md)
 
 ### Установка plugins
 [fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md)  
