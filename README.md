@@ -55,12 +55,13 @@ docker-compose ps
 
 ### Установка plugins
 [fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md)  
-[Network Architecture - archires](./doc/plugins_Network Architecture-archires.md)  
 [Картографий positions](./doc/plugins_positions.md)  
+[Network Architecture - archires](./doc/plugins_NetworkArchitecture-archires.md)  
 
 
 
-## timelineticket - нет для версии 9.3
+Разобрать!!!
+## timelineticket
 # https://github.com/pluginsGLPI/timelineticket/releases
 wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.2%2B1.0/glpi-timelineticket-9.2.1.0.tar.gz
 tar -xzvf glpi-timelineticket-9.2.1.0.tar.gz
