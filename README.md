@@ -83,7 +83,8 @@ docker-compose ps
 [fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md) - агент инвентаризации  
 [Картографий positions](./doc/plugins_positions.md) - привязка Активов к положению на схеме  
 [Network Architecture - archires](./doc/plugins_NetworkArchitecture-archires.md) - Сетевые архитектуры  
-
+[Комплектовка - racks](./doc/plugins_BaysManagement.md) - управоение содержимым стоек
+ 
 
 
 # Разобрать!!!
