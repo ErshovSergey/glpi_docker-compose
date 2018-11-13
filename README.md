@@ -29,7 +29,7 @@ busybox              latest              59788edf1f3e        5 weeks ago        
 git clone https://github.com/ErshovSergey/glpi_docker-compose.git
 ```
 
-### Хранение данных
+#### Хранение данных
 Структура папки
 ```shell
 glpi
@@ -39,7 +39,7 @@ glpi
    \client_bareos   файлы настроек клиента bareos 
 ```
 
-### 2. Измените настройки
+### Измените настройки
 В файле .env укажите необходимые данные.  
 Если файла нет то необходимо скопировать .env-default в .env  
 Параметры mysql сервера укажите в файле mysql.env.  
@@ -75,10 +75,13 @@ glpi и bareos-fd
 ```shell
 docker-compose -f docker-compose.yml -f docker-compose.bareos.yml up -d
 ```
-glpi, bareos-fd и letsencrypt+nginx-proxy
-используется образ https://hub.docker.com/r/smashwilson/lets-nginx/
+glpi и letsencrypt+nginx-proxy
 ```shell
-docker-compose -f docker-compose.yml -f docker-compose.bareos.yml -f docker-compose.lets-nginx.yml  --remove-orphans up -d
+docker-compose -f docker-compose.yml -f docker-compose.linuxserver-letsencrypt.yml up -d --remove-orphans
+```
+glpi, bareos-fd и letsencrypt+nginx-proxy
+```shell
+docker-compose -f docker-compose.yml -f docker-compose.bareos.yml -f docker-compose.linuxserver-letsencrypt.yml --remove-orphans up -d
 ```
 
 Логи работы glpi  
