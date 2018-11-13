@@ -1,29 +1,16 @@
 version: '2'
-services:
-  mysql-data:
-    image: busybox
-    container_name: "${GLPI_NAME}_mysql-data"
-    volumes:
-      - "${GLPI_PATH}/mysql_data:/var/lib/mysql"
 
+services:
   mysql:
     image: mysql:5.7
-    volumes_from:
-      - mysql-data
+    volumes:
+      - "${GLPI_PATH}/mysql_data:/var/lib/mysql"
     restart: always
     container_name: "${GLPI_NAME}_mysql"
     env_file:
       - ./mysql.env
-    depends_on:
-      - mysql-data
     logging:
       driver: none
-
-  glpi-data:
-    image: busybox
-    volumes:
-      - "${GLPI_PATH}/html:/var/www/html"
-    container_name: "${GLPI_NAME}_glpi-data"
 
   glpi:
     environment:
@@ -36,8 +23,8 @@ services:
       context: glpi
       dockerfile: Dockerfile
     hostname: glpi
-    volumes_from:
-      - glpi-data
+    volumes:
+      - "${GLPI_PATH}/html:/var/www/html"
     container_name: "${GLPI_NAME}_glpi"
     links:
       - mysql:mysql
@@ -45,66 +32,6 @@ services:
       -  "${GLPI_HTTP_IP_PORT}:80"
     depends_on:
       - mysql
-      - glpi-data
     restart: always
     logging:
       driver: none
-
-#  bareos-fd:
-#    build:
-#      context: bareos-fd
-#      dockerfile: Dockerfile
-#    hostname: bareos-fd
-#    container_name: "${GLPI_NAME}_bareos-fd"
-#    volumes_from:
-#      - glpi-data
-#    volumes:
-#      - "${GLPI_PATH}/client_bareos:/etc/bareos"
-#    links:
-#      - mysql:mysql
-#    ports:
-#      - "${BAREOSFD_HTTP_IP_PORT}:9102"
-#    depends_on:
-#      - mysql
-#      - glpi-data
-#    restart: always
-#    logging:
-#      driver: none
-
-
-#  lets-nginx:
-#    image: smashwilson/lets-nginx
-#    restart: always
-#    container_name: "${GLPI_NAME}_lets_nginx"
-#    hostname: lets-nginx_{GLPI_NAME}
-#    volumes:
-#      - "./cache:/cache"
-#      - "./letsencrypt:/etc/letsencrypt"
-#    links:
-#      - registry
-#    environment:
-#      EMAIL: "${LETS_EMAIL}"
-#      DOMAIN: "${LETS_DOMAIN}"
-#      UPSTREAM: "registry:80"
-#    ports:
-#      - "${LETS_HTTP_IP_PORT}:80"
-#      - "${LETS_HTTPS_IP_PORT}:443"
-
-#  registry:
-#    restart: always
-#    container_name: "${GLPI_NAME}_registry"
-#    hostname: registry_{GLPI_NAME}
-#    image: registry:2
-#    ports:
-#      - 5000:5000
-#    environment:
-#      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/live/${LETS_DOMAIN}/fullchain.pem
-#      REGISTRY_HTTP_TLS_KEY: /certs/live/${LETS_DOMAIN}/privkey.pem
-#      REGISTRY_AUTH: htpasswd
-#      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
-#      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
-#    volumes:
-#      - ./registry:/var/lib/registry
-#      - ./letsencrypt/:/certs
-#      - ./auth:/auth
-

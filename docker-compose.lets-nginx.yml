@@ -1,0 +1,39 @@
+version: '2'
+services:
+  lets-nginx:
+    image: smashwilson/lets-nginx
+    restart: always
+    container_name: "${GLPI_NAME}_lets_nginx"
+    hostname: lets-nginx_{GLPI_NAME}
+    volumes:
+      - "${GLPI_PATH}/lets-nginx/cache:/cache"
+      - "${GLPI_PATH}/lets-nginx/letsencrypt:/etc/letsencrypt"
+    links:
+      - registry
+    environment:
+      EMAIL: "${LETS_EMAIL}"
+      DOMAIN: "${LETS_DOMAIN}"
+#      UPSTREAM: "registry:80"
+      UPSTREAM: "192.168.100.240:85"
+    ports:
+      - "${LETS_HTTP_IP_PORT}:80"
+      - "${LETS_HTTPS_IP_PORT}:443"
+
+  registry:
+    restart: always
+    container_name: "${GLPI_NAME}_registry"
+    hostname: registry_{GLPI_NAME}
+    image: registry:2
+    ports:
+      - 5000:5000
+    environment:
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/live/${LETS_DOMAIN}/fullchain.pem
+      REGISTRY_HTTP_TLS_KEY: /certs/live/${LETS_DOMAIN}/privkey.pem
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm
+    volumes:
+      - ${GLPI_PATH}/registry/registry:/var/lib/registry
+      - ${GLPI_PATH}/registry/letsencrypt/:/certs
+      - ${GLPI_PATH}/registry/auth:/auth
+

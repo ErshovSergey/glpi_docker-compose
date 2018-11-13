@@ -1,0 +1,22 @@
+version: '2'
+services:
+  bareos-fd:
+    build:
+      context: bareos-fd
+      dockerfile: Dockerfile
+    hostname: bareos-fd
+    container_name: "${GLPI_NAME}_bareos-fd"
+    volumes_from:
+      - glpi
+    volumes:
+      - "${GLPI_PATH}/client_bareos:/etc/bareos"
+    links:
+      - mysql:mysql
+    ports:
+      - "${BAREOSFD_HTTP_IP_PORT}:9102"
+    depends_on:
+      - mysql
+      - glpi
+    restart: always
+    logging:
+      driver: none

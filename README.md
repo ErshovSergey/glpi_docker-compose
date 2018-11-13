@@ -63,6 +63,20 @@ docker-compose down
 ```shell
 docker-compose ps
 ```
+Запустить glpi
+```shell
+docker-compose -f docker-compose.yml up -d
+```
+Запустить glpi и bareos-fd
+```shell
+docker-compose -f docker-compose.yml -f docker-compose.bareos.yml up -d
+```
+Запустить glpi, bareos-fd и letsencrypt+nginx-proxy
+используется образ https://hub.docker.com/r/smashwilson/lets-nginx/
+```shell
+docker-compose -f docker-compose.yml -f docker-compose.bareos.yml -f docker-compose.lets-nginx.yml up -d
+```
+
 Логи работы glpi  
 В файлах 
 ```
