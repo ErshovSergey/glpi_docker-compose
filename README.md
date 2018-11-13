@@ -3,9 +3,9 @@
 ## Устанавливаем и запускаем GLPI instance в docker.
 Всего 4 контейнера:  
 - для запуска glpi  
-- контейнер MySQL(официальный)  
+- контейнер [mysql:5.7](https://github.com/mysql/mysql-server)
 - контейнер для клиента резервного копирования bareos-fd (опционально)
-- контейнер с letsencrypt (опционально)
+- контейнер с letsencrypt ([linuxserver/letsencrypt](https://github.com/linuxserver/docker-letsencrypt) ) (опционально)
 ```# docker ps -a  
 CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                     PORTS                      NAMES  
 1b8997776942        glpihostname_glpi    "/opt/entrypoint.sh"     6 minutes ago       Up 6 minutes               192.168.XXX.Х:80->80/tcp   glpi.hostname.ru_glpi  
