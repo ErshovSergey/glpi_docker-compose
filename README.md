@@ -53,11 +53,15 @@ docker-compose config
 ```
 Собрать и запустить compomose
 ```shell
-docker-compose up --build -d
+docker-compose up -d --remove-orphans
 ```
-Остановить и удалить  
+Остановить
 ```shell
-docker-compose down
+docker-compose down -v
+```
+Остановить и удалить все контейнеры и образы
+```shell
+docker-compose down -v --rmi all --remove-orphans
 ```
 Посмотреть состояние  
 ```shell
@@ -74,7 +78,7 @@ docker-compose -f docker-compose.yml -f docker-compose.bareos.yml up -d
 glpi, bareos-fd и letsencrypt+nginx-proxy
 используется образ https://hub.docker.com/r/smashwilson/lets-nginx/
 ```shell
-docker-compose -f docker-compose.yml -f docker-compose.bareos.yml -f docker-compose.lets-nginx.yml up -d
+docker-compose -f docker-compose.yml -f docker-compose.bareos.yml -f docker-compose.lets-nginx.yml  --remove-orphans up -d
 ```
 
 Логи работы glpi  
