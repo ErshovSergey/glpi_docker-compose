@@ -2,10 +2,10 @@
 
 ## Устанавливаем и запускаем GLPI instance в docker.
 Всего 4 контейнера:  
-- с пакетами для запуска glpi  
+- для запуска glpi  
 - контейнер MySQL(официальный)  
-- с файлами glpi  
-- контейнер с файлами базы MySQL  
+- контейнер для клиента резервного копирования bareos-fd (опционально)
+- контейнер с letsencrypt (опционально)
 ```# docker ps -a  
 CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                     PORTS                      NAMES  
 1b8997776942        glpihostname_glpi    "/opt/entrypoint.sh"     6 minutes ago       Up 6 minutes               192.168.XXX.Х:80->80/tcp   glpi.hostname.ru_glpi  
@@ -63,15 +63,15 @@ docker-compose down
 ```shell
 docker-compose ps
 ```
-Запустить glpi
+ТОлько glpi
 ```shell
 docker-compose -f docker-compose.yml up -d
 ```
-Запустить glpi и bareos-fd
+glpi и bareos-fd
 ```shell
 docker-compose -f docker-compose.yml -f docker-compose.bareos.yml up -d
 ```
-Запустить glpi, bareos-fd и letsencrypt+nginx-proxy
+glpi, bareos-fd и letsencrypt+nginx-proxy
 используется образ https://hub.docker.com/r/smashwilson/lets-nginx/
 ```shell
 docker-compose -f docker-compose.yml -f docker-compose.bareos.yml -f docker-compose.lets-nginx.yml up -d
