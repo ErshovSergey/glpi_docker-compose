@@ -10,18 +10,17 @@ services:
     restart: on-failure:1
     volumes:
       - ${GLPI_PATH}/letsencrypt/config:/config
-      - ${GLPI_PATH}/nginx-sites:/config/nginx/site-confs:ro
+#      - ${GLPI_PATH}/letsencrypt/nginx.conf:/config/nginx/site-confs/default
+    depends_on:
+      - glpi
     environment:
       - EMAIL=${LETS_EMAIL}
-#      - URL=${LETS_DOMAIN}
-      - URL=erchov.ru
-      - SUBDOMAINS=glpi
+      - URL=${LETS_URL}
+      - SUBDOMAINS=${LETS_SUBDOMAIN}
+      - ONLY_SUBDOMAINS=true
       - VALIDATION=http
       - TZ=Europe/Moscow
-      - PGID=0
-      - PUID=0
-#      - /etc/localtime:/etc/localtime:ro
-#      UPSTREAM: "registry:80"
-#      - UPSTREAM: "192.168.100.240:85"
-
+      - PGID=abc
+      - PUID=abc
+   # - STAGING=true # this should be uncommented when testing for initial success, to avoid some rate limiting
 
