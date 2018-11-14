@@ -21,3 +21,4 @@ docker exec -ti ContainerName_letsencrypt fail2ban-client set nginx-http-auth un
 
 ### Полезные ссылки
 [banning-with-http-auth-and-fail2ban](https://technicalramblings.com/blog/banning-with-http-auth-and-fail2ban/)
+[Using fail2ban](https://github.com/linuxserver/docker-letsencrypt#using-fail2ban)
