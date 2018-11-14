@@ -112,7 +112,7 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 ### [Интеграция с Active Directory](./doc/GLPI_ActiveDirectory_Authentication_Setting.md)
 
 ### Plugins
-Расширить функционал можно с помощью плагинов.
+Расширить функционал можно с помощью плагинов.  
 [fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md) - агент инвентаризации  
 [Картографий positions](./doc/plugins_positions.md) - привязка Активов к положению на схеме  
 [Network Architecture - archires](./doc/plugins_NetworkArchitecture-archires.md) - Сетевые архитектуры  
