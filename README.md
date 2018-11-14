@@ -72,7 +72,7 @@ docker-compose down -v --rmi all --remove-orphans
 ```shell
 docker-compose ps
 ```
-ТОлько glpi
+Только glpi
 ```shell
 docker-compose -f docker-compose.yml up -d
 ```
@@ -113,7 +113,6 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 
 ### Plugins
 Расширить функционал можно с помощью плагинов.
-#### Установка plugins
 [fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md) - агент инвентаризации  
 [Картографий positions](./doc/plugins_positions.md) - привязка Активов к положению на схеме  
 [Network Architecture - archires](./doc/plugins_NetworkArchitecture-archires.md) - Сетевые архитектуры  
