@@ -9,6 +9,7 @@
 ```
 docker exec -it <ContainerName_letsencrypt> htpasswd -c /config/nginx/.htpasswd <UserName>
 ```
+Также можно ограничить доступ по ip адресам.
 Файл с разрешениями */config/nginx/list_IP*
 ```
 # office
