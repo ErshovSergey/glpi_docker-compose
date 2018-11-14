@@ -6,7 +6,8 @@
 - контейнер [mysql:5.7](https://github.com/mysql/mysql-server)
 - контейнер для клиента резервного копирования bareos-fd (опционально)
 - контейнер с letsencrypt ([linuxserver/letsencrypt](https://github.com/linuxserver/docker-letsencrypt) ) (опционально)
-```# docker ps -a  
+```
+# docker ps -a  
 CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                     PORTS                      NAMES  
 1b8997776942        glpihostname_glpi    "/opt/entrypoint.sh"     6 minutes ago       Up 6 minutes               192.168.XXX.Х:80->80/tcp   glpi.hostname.ru_glpi  
 f3eb793bfbc6        mysql:5.7            "docker-entrypoint.s…"   6 minutes ago       Up 6 minutes               3306/tcp, 33060/tcp        glpi.hostname.ru_mysql  
@@ -15,12 +16,16 @@ f3eb793bfbc6        mysql:5.7            "docker-entrypoint.s…"   6 minutes ag
 ```
 
 Размеры образов
-``` # docker images  
+``` 
+# docker images  
 REPOSITORY           TAG                 IMAGE ID            CREATED              SIZE  
 glpihostname_glpi   latest              b87c1c8ff082        About a minute ago   372MB  
 mysql                5.7                 702fb0b7837f        2 weeks ago          372MB  
-debian               stretch             be2868bebaba        3 weeks ago          101MB  
-busybox              latest              59788edf1f3e        5 weeks ago          1.15MB
+linuxserver/letsencrypt   latest              d52b20f5a544        4 days ago          239MB
+mysql                     5.7                 702fb0b7837f        2 weeks ago         372MB
+debian                    stretch             be2868bebaba        4 weeks ago         101MB
+debian                    jessie              efdec82af25a        4 weeks ago         127MB
+busybox                   latest              59788edf1f3e        6 weeks ago         1.15MB
 ```  
 
 
