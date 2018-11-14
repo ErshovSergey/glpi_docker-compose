@@ -96,6 +96,9 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 /var/www/html/glpi/files/_log/mail.log
 /var/www/html/glpi/files/_log/mail-error.log
 ```
+
+### [Настройка fail2ban](./doc/fail2ban.md)
+
 ### Дальнейшая настройка производится через браузер.
 Настройка доступа mysql 
 ![Settings glpi-mysql](./glpi-mysql_settings.png)  
@@ -193,5 +196,3 @@ wget https://forge.glpi-project.org/attachments/download/2246/glpi-plugin-report
 tar -xzf glpi-plugin-reports-1.11.3.tar.gz
 mv reports /mnt/sdb/DOCKER_DATA/glpi/html/glpi/plugins/
 chown -R www-data:www-data /mnt/sdb/DOCKER_DATA/glpi/html/*
-
-
