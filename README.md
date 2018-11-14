@@ -102,6 +102,7 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 /var/www/html/glpi/files/_log/mail-error.log
 ```
 
+### [Настройка reverse-proxy](./doc/Настройка reverse-proxy.md)
 ### [Настройка fail2ban](./doc/fail2ban.md)
 
 ### Дальнейшая настройка производится через браузер.
