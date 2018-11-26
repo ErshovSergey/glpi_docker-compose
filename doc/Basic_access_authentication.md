@@ -19,5 +19,15 @@ allow Y.YY.YYY.YYYY;
 # klient
 allow Z.ZZZ.ZZ.ZZZZ;
 ```
+В файл */config/nginx/list_IP* также можно добавить перенаправление на страницу с инсталятором агента, например так
+```
+# перенаправление на страницу для скачивания агента инвентаризации
+  location ^~/FakeLocation/agent {
+    auth_basic off;
+    allow all;
+    return 301   https://github.com/fusioninventory/fusioninventory-agent/releases;
+  }
+```
+Теперь при запросе страницы *http://glpi.host.ru/agent* произойдет перенаправление на страницу с инсталяторм агента.
 
 ### Полезные ссылки
