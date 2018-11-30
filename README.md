@@ -112,6 +112,11 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 
 ### [Интеграция с Active Directory](./doc/GLPI_ActiveDirectory_Authentication_Setting.md)
 
+### Экспорт в PDF с использование кирилицы
+Настраивается в **Setup\General\Default values**  
+в поле **PDF export font** указать шрифт DejaVuSans.  
+Сохранить и перелогинится.  
+
 ### Plugins
 Расширить функционал можно с помощью плагинов.  
 [fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md) - агент инвентаризации  
