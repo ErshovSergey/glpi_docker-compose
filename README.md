@@ -8,27 +8,22 @@
 - контейнер с letsencrypt ([linuxserver/letsencrypt](https://github.com/linuxserver/docker-letsencrypt) ) (опционально)
 ```
 # docker ps -a  
-CONTAINER ID        IMAGE                COMMAND                  CREATED             STATUS                     PORTS                      NAMES  
-1b8997776942        glpihostname_glpi    "/opt/entrypoint.sh"     6 minutes ago       Up 6 minutes               192.168.XXX.Х:80->80/tcp   glpi.hostname.ru_glpi  
-f3eb793bfbc6        mysql:5.7            "docker-entrypoint.s…"   6 minutes ago       Up 6 minutes               3306/tcp, 33060/tcp        glpi.hostname.ru_mysql  
-6e499f87605c        busybox              "sh"                     6 minutes ago       Exited (0) 6 minutes ago                              glpi.hostname.ru_glpi-data  
-2a69a6982e6d        busybox              "sh"                     6 minutes ago       Exited (0) 6 minutes ago                              glpi.hostname.ru_mysql-data  
+CONTAINER ID        IMAGE                     COMMAND                  CREATED             STATUS              PORTS                                                  NAMES
+0dec04661132        linuxserver/letsencrypt   "/init"                  7 hours ago         Up 7 hours          192.168.123.2:80->80/tcp, 192.168.123.2:443->443/tcp   glpi.hostname.ru_letsencrypt
+e9aba5ce194e        glpihostname_glpi        "/opt/entrypoint.sh"     7 hours ago         Up 7 hours          192.168.123.2:81->80/tcp                               glpi.hostname.ru_glpi
+d20b743f2cad        mysql:5.7                 "docker-entrypoint.s…"   7 hours ago         Up 7 hours          3306/tcp, 33060/tcp                                    glpi.hostname.ru_mysql
 ```
 
 Размеры образов
 ``` 
 # docker images  
-REPOSITORY           TAG                 IMAGE ID            CREATED              SIZE  
-glpihostname_glpi   latest              b87c1c8ff082        About a minute ago   372MB  
-mysql                5.7                 702fb0b7837f        2 weeks ago          372MB  
-linuxserver/letsencrypt   latest              d52b20f5a544        4 days ago          239MB
-mysql                     5.7                 702fb0b7837f        2 weeks ago         372MB
-debian                    stretch             be2868bebaba        4 weeks ago         101MB
-debian                    jessie              efdec82af25a        4 weeks ago         127MB
-busybox                   latest              59788edf1f3e        6 weeks ago         1.15MB
+REPOSITORY                TAG                 IMAGE ID            CREATED             SIZE
+glpihostnameru_glpi       latest              8932da62690a        7 hours ago         376MB
+debian                    stretch             4879790bd60d        2 weeks ago         101MB
+<none>                    <none>              b6de9792859c        2 weeks ago         374MB
+linuxserver/letsencrypt   latest              d52b20f5a544        3 weeks ago         239MB
+mysql                     5.7                 702fb0b7837f        5 weeks ago         372MB
 ```  
-
-
 ### Клонируем проект
 ```shell
 git clone https://github.com/ErshovSergey/glpi_docker-compose.git
@@ -91,7 +86,7 @@ docker-compose \
 
 При использовании basic авторизации добавлять пароли командой
 ```
-docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd <UserName>
+docker exec -it glpi.hostname.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd <UserName>
 ```
 
 Логи работы glpi  
@@ -106,7 +101,7 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 ### [Настройка fail2ban](./doc/fail2ban.md)
 
 ### Дальнейшая настройка производится через браузер.
-Настройка доступа mysql 
+Настройка доступа mysql  
 ![Settings glpi-mysql](./glpi-mysql_settings.png)  
 Для подключения к sql серверу указать **mysql**, **glpi** и пароль из **mysql.env**.
 
@@ -118,7 +113,7 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 Сохранить и перелогинится.  
 
 Расширить функционал можно с помощью плагинов.  
-[Комплектовка - racks](./doc/plugins_BaysManagement.md) - управление содержимым стоек
+[Комплектовка - racks](./doc/plugins_BaysManagement.md) - управление содержимым стоек  
 #### [Обновление plugins](doc/Update_plugins.md)
  
 ## Восстанавить базу mysql можно командой
