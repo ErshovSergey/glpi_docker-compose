@@ -68,13 +68,45 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
 
-#### archires
+#### positions
 [оф.сайт](https://github.com/InfotelGLPI/positions/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
 wget https://github.com/InfotelGLPI/positions/releases/download/4.5.1/glpi-positions-4.5.1.tar.gz
 tar xzf *.tar.gz
 cp -r positions /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+#### Print to pdf - PDF
+[оф.сайт](https://forge.glpi-project.org/projects/pdf/files) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://forge.glpi-project.org/attachments/download/2252/glpi-pdf-1.4.0.tar.gz
+tar xzf *.tar.gz
+cp -r pdf /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+#### Human Resources
+[оф.сайт](https://github.com/InfotelGLPI/resources/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/resources/releases/download/2.5.1/glpi-resources-2.5.1.tar.gz
+tar xzf *.tar.gz
+cp -r resources /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+#### Additional Reports
+[оф.сайт](https://forge.glpi-project.org/projects/reports/files)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://forge.glpi-project.org/attachments/download/2253/glpi-reports-1.12.0.tar.gz
+tar xzf *.tar.gz
+cp -r reports /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
