@@ -45,3 +45,36 @@ cp -r fusioninventory /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
+#### accounts
+[оф.сайт](https://github.com/InfotelGLPI/accounts/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/accounts/releases/download/2.4.2/glpi-accounts-2.4.2.tar.gz
+tar xzf *.tar.gz
+cp -r accounts /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+#### archires
+[оф.сайт](https://forge.glpi-project.org/projects/archires/files) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://forge.glpi-project.org/attachments/download/2265/glpi-archires-2.6.0.tar.gz
+tar xzf *.tar.gz
+cp -r archires /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+#### archires
+[оф.сайт](https://github.com/InfotelGLPI/positions/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/positions/releases/download/4.5.1/glpi-positions-4.5.1.tar.gz
+tar xzf *.tar.gz
+cp -r positions /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
