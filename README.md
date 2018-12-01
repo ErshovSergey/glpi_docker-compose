@@ -118,17 +118,11 @@ docker exec -it glpi.itsmpro.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd 
 Сохранить и перелогинится.  
 
 Расширить функционал можно с помощью плагинов.  
-[fusioninventory-for-glpi](./doc/plugins_fusioninventory-for-glpi.md) - агент инвентаризации  
-[Картографий positions](./doc/plugins_positions.md) - привязка Активов к положению на схеме  
-[Network Architecture - archires](./doc/plugins_NetworkArchitecture-archires.md) - Сетевые архитектуры  
-[Комплектовка - racks](./doc/plugins_BaysManagement.md) - управоение содержимым стоек
+[Комплектовка - racks](./doc/plugins_BaysManagement.md) - управление содержимым стоек
 #### [Обновление plugins](doc/Update_plugins.md)
  
-
-
 ## Восстанавить базу mysql можно командой
 ```
 cat /var/www/html/glpi.erchov.ru_sql | mysql -h mysql -u root -p
 ```
-
 ### [Обновление glpi](doc/Update_glpi.md)
