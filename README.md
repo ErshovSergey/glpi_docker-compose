@@ -118,6 +118,6 @@ docker exec -it glpi.hostname.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd
  
 ## Восстанавить базу mysql можно командой
 ```
-cat /var/www/html/glpi.erchov.ru_sql | mysql -h mysql -u root -p
+cat /var/www/html/glpi.hostame.ru_sql | mysql -h mysql -u root -p
 ```
 ### [Обновление glpi](doc/Update_glpi.md)
