@@ -100,6 +100,7 @@ cp -r resources /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
 #### Additional Reports
 [оф.сайт](https://forge.glpi-project.org/projects/reports/files)
 ```
@@ -107,6 +108,17 @@ mkdir /plugins_update && cd /plugins_update
 wget https://forge.glpi-project.org/attachments/download/2253/glpi-reports-1.12.0.tar.gz
 tar xzf *.tar.gz
 cp -r reports /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+#### timelineticket
+[оф.сайт](https://github.com/pluginsGLPI/timelineticket/releases)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.3%2B1.0/glpi-timelineticket-9.3+1.0.tar.gz
+tar xzf *.tar.gz
+cp -r timelineticket /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
