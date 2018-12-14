@@ -51,6 +51,7 @@ server {
             allow all;
             try_files $uri @redirect;
           }
+
         }
 
         location @redirect {
