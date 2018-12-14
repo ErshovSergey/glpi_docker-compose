@@ -44,6 +44,9 @@ sed -i "s|^upload_max_filesize .*|upload_max_filesize = $GLPI_upload_max_filesiz
 sed -i "s|^post_max_size .*|post_max_size = $GLPI_post_max_size|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^memory_limit .*|memory_limit = $GLPI_memory_limit|" /etc/php/7.0/apache2/php.ini
 sed -i "s|^max_execution_time .*|max_execution_time = $GLPI_max_execution_time|" /etc/php/7.0/apache2/php.ini
+# enable apc
+echo 'apc.enable = 1' > /etc/php/7.0/cli/conf.d/enable-apc-cli.ini
+echo 'apc.enable_cli = 1' >> /etc/php/7.0/cli/conf.d/enable-apc-cli.ini
 
 
 
