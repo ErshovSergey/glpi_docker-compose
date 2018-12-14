@@ -89,12 +89,15 @@ docker-compose \
 docker exec -it glpi.hostname.ru_letsencrypt htpasswd -c /config/nginx/.htpasswd <UserName>
 ```
 
-Логи работы glpi  
+#### Логи glpi  
 В файлах 
 ```
-/var/www/html/glpi/files/_log/php-errors.log
-/var/www/html/glpi/files/_log/mail.log
-/var/www/html/glpi/files/_log/mail-error.log
+${GLPI_PATH}/html/glpi/files/_log/*
+```
+
+#### Логи apache2
+```
+${GLPI_PATH}/logs/apache2/*
 ```
 
 ### [Настройка reverse-proxy](./doc/Настройка_reverse-proxy.md)

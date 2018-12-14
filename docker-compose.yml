@@ -25,6 +25,7 @@ services:
     hostname: glpi
     volumes:
       - "${GLPI_PATH}/html:/var/www/html"
+      - "${GLPI_PATH}/logs/apache2:/var/log/apache2"
     container_name: "${GLPI_NAME}_glpi"
     links:
       - mysql:mysql
@@ -33,5 +34,5 @@ services:
     depends_on:
       - mysql
     restart: always
-    logging:
-      driver: none
+#    logging:
+#      driver: none
