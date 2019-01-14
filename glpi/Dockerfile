@@ -29,6 +29,7 @@ RUN cd /tmp/ \
     php-xml \
     php-apcu-bc \
     php-cas \
+    php7.0-zip \
     cron \
     rsyslog \
     wget \
