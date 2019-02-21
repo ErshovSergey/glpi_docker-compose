@@ -5,12 +5,11 @@ services:
     image: mysql:5.7
     volumes:
       - "${GLPI_PATH}/mysql_data:/var/lib/mysql"
+      - "${GLPI_PATH}/mysql_backup:/mysql_backup"
     restart: always
     container_name: "${GLPI_NAME}_mysql"
     env_file:
       - ./mysql.env
-    logging:
-      driver: none
 
   glpi:
     environment:
@@ -19,6 +18,10 @@ services:
       - GLPI_post_max_size=${GLPI_post_max_size}
       - GLPI_memory_limit=${GLPI_memory_limit}
       - GLPI_max_execution_time=${GLPI_max_execution_time}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     build:
       context: glpi
       dockerfile: Dockerfile
@@ -36,3 +39,4 @@ services:
     restart: always
 #    logging:
 #      driver: none
+

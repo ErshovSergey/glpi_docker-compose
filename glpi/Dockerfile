@@ -34,6 +34,7 @@ RUN cd /tmp/ \
     rsyslog \
     wget \
     graphviz \
+    php-snmp \
   ## clean
   && apt autoremove -qqy \
   && apt clean \
