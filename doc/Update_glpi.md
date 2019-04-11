@@ -16,7 +16,7 @@ mkdir glpi_update && cd glpi_update
 ```
 
 #### Исходный код новой версии  
-На странице [github.com/glpi-project/glpi/releases](github.com/glpi-project/glpi/releases) выбираем нужный релиз и скачиваем его, например  
+На странице [github.com/glpi-project/glpi/releases](https://github.com/glpi-project/glpi/releases) выбираем нужный релиз и скачиваем его, например  
 ```
 wget https://github.com/glpi-project/glpi/releases/download/9.3.3/glpi-9.3.3.tgz
 ```
