@@ -2,16 +2,20 @@
 ### Обновление glpi
 Останавливаем все контейнеры.  
 Делаем резервную копию каталога с данными.  
-Запускаем контейнры. Идем в контейнер с glpi  
 ```
-docker exec -ti <dockername> bash
+ tar -zcvf NameBackup.tar.gz %GLPI_PATH%
+```
+Запускаем контейнеры.  
+В контейнере glpi  
+```
+docker exec -ti <glpi-conteiner-name> bash
 ```
 Создаём временный каталог
 ```
 mkdir glpi_update && cd glpi_update
 ```
 
-#### Исходный код
+#### Исходный код новой версии  
 На странице github.com/glpi-project/glpi/releases выбираем нужный релиз и скачиваем его, например  
 ```
 wget https://github.com/glpi-project/glpi/releases/download/9.3.3/glpi-9.3.3.tgz
@@ -27,7 +31,7 @@ rm -rf ../glpi_update
 ```
 rm /var/www/html/glpi/install/install.php
 ```
-#### Миграция на InnoDB engine
+#### Миграция на InnoDB engine при необходимости
 В контейнере запускаем
 ```
 cd /var/www/html/glpi/scripts/ && php innodb_migration.php
