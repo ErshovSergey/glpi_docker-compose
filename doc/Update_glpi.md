@@ -36,4 +36,3 @@ rm /var/www/html/glpi/install/install.php
 ```
 cd /var/www/html/glpi/scripts/ && php innodb_migration.php
 ```
-#### [Обновляем plugin's](doc/Update_plugins.md)
