@@ -124,3 +124,5 @@ ${GLPI_PATH}/logs/apache2/*
 cat /var/www/html/glpi.hostame.ru_sql | mysql -h mysql -u root -p
 ```
 ### [Обновление glpi](doc/Update_glpi.md)
+### Отправка почты через gmail.com
+![Settings glpi-mysql](./doc/smtp_gmail_settings.png)  
