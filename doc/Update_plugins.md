@@ -124,7 +124,7 @@ rm -rf /plugins_update
 ```
 
 #### telegram bot
-[оф.сайт](https://github.com/pluginsGLPI/timelineticket/releases)
+[оф.сайт](https://github.com/pluginsGLPI/telegrambot/releases)
 ```
 mkdir /plugins_update && cd /plugins_update
 wget https://github.com/pluginsGLPI/telegrambot/releases/download/2.0.0/glpi-telegrambot-2.0.0.tar.bz2
