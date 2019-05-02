@@ -133,3 +133,14 @@ cp -r telegrambot /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
+#### room
+[оф.сайт](https://github.com/pluginsGLPI/room)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/room/archive/3.1.2.tar.gz
+tar xzf *.tar.gz
+mv room-3.1.2 /var/www/html/glpi/plugins/room
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
