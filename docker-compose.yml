@@ -22,6 +22,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - HTTPS_PROXY=${HTTPS_PROXY}
     build:
       context: glpi
       dockerfile: Dockerfile
