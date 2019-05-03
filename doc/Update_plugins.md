@@ -133,6 +133,7 @@ cp -r telegrambot /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+[Настройка](../doc/GLPI-TelegramBot.md)
 
 #### room
 [оф.сайт](https://github.com/pluginsGLPI/room)
