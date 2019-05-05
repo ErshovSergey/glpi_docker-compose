@@ -39,7 +39,7 @@ rm -rf /plugins_update
 [оф.сайт](https://github.com/fusioninventory/fusioninventory-for-glpi/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.3%2B1.3/fusioninventory-9.3+1.3.tar.bz2
+wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.3%2B1.4/fusioninventory-9.3+1.4.tar.bz2
 tar xjf *.tar.bz2
 cp -r fusioninventory /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
