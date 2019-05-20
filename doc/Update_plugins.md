@@ -145,3 +145,14 @@ mv room-3.1.2 /var/www/html/glpi/plugins/room
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
+#### GLPI treeview  
+[оф.сайт](https://github.com/pluginsGLPI/treeview/releases)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/treeview/releases/download/1.8.0/glpi-treeview-1.8.0.tar.bz2
+tar xjf *.tar.bz2
+mv treeview /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
