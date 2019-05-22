@@ -156,3 +156,14 @@ mv treeview /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
+#### connections  
+[оф.сайт](https://github.com/pluginsGLPI/connections)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/connections/releases/download/9.3/glpi-connections.9.3.tar.gz
+tar xzf *.tar.gz
+mv connections /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
