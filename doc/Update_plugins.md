@@ -189,3 +189,14 @@ mv archisw /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
+#### domains 
+[оф.сайт](https://github.com/InfotelGLPI/domains)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/domains/releases/download/2.0.2/glpi-domains-2.0.2.tar.gz
+tar xzf *.tar.gz
+mv domains /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
