@@ -167,3 +167,25 @@ mv connections /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
+#### glpi-dataflows  
+[оф.сайт](https://github.com/ericferon/glpi-dataflows)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/ericferon/glpi-dataflows/releases/download/v2.0.15/dataflows-v2.0.15.tar.gz
+tar xzf *.tar.gz
+mv dataflows /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+#### glpi-dataflows  
+[оф.сайт](https://github.com/ericferon/glpi-archisw)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/ericferon/glpi-archisw/releases/download/v2.1.1/archisw-v2.1.1.tar.gz
+tar xzf *.tar.gz
+mv archisw /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
