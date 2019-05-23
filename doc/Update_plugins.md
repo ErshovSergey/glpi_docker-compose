@@ -201,3 +201,39 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
  
+#### databases  
+[оф.сайт](https://github.com/InfotelGLPI/databases)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/databases/releases/download/2.1.1/glpi-databases-2.1.1.tar.gz
+tar xzf *.tar.gz
+mv domains /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+#### webapplications  
+[оф.сайт](https://github.com/InfotelGLPI/webapplications)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/webapplications/releases/download/2.5.2/glpi-webapplications-2.5.2.tar.gz
+tar xzf *.tar.gz
+mv webapplications /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+
+#### badges  
+[оф.сайт](https://github.com/InfotelGLPI/badges)
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/badges/releases/download/2.4.1/glpi-badges-2.4.1.tar.gz
+tar xzf *.tar.gz
+mv badges /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update
+```
+
+
+ 
