@@ -207,7 +207,7 @@ rm -rf /plugins_update
 mkdir /plugins_update && cd /plugins_update
 wget https://github.com/InfotelGLPI/databases/releases/download/2.1.1/glpi-databases-2.1.1.tar.gz
 tar xzf *.tar.gz
-mv domains /var/www/html/glpi/plugins/
+mv databases /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
