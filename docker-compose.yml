@@ -13,8 +13,8 @@ services:
 
   glpi:
     environment:
-       - "/etc/timezone:/etc/timezone:ro"
-       - "/etc/localtime:/etc/localtime:ro"
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
       - GLPI_VERSION=${GLPI_VERSION}
       - GLPI_upload_max_filesize=${GLPI_upload_max_filesize}
       - GLPI_post_max_size=${GLPI_post_max_size}
