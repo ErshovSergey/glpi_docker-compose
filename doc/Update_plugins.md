@@ -179,7 +179,7 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
 
-#### glpi-dataflows  
+#### archisw  
 [оф.сайт](https://github.com/ericferon/glpi-archisw)
 ```
 mkdir /plugins_update && cd /plugins_update
