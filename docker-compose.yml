@@ -9,7 +9,7 @@ services:
     restart: always
     container_name: "${GLPI_NAME}_mysql"
     env_file:
-      - ./mysql.env
+      - ./.env
 
   glpi:
     environment:
