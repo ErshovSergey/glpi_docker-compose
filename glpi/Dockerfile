@@ -12,9 +12,6 @@ ENV LANG='ru_RU.UTF-8' LANGUAGE='ru_RU.UTF-8' LC_ALL='ru_RU.UTF-8'
 RUN echo ru_RU.UTF-8 UTF-8 >> /etc/locale.gen && locale-gen
 
 RUN cd /tmp/ \
- # timezone
-  && ln -sf /usr/share/zoneinfo/Europe/Moscow  /etc/localtime && dpkg-reconfigure -f noninteractive tzdata \
- # install
   && apt -y install \
     apache2 \
     php \
