@@ -223,7 +223,6 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
 
-
 #### badges  
 [оф.сайт](https://github.com/InfotelGLPI/badges)
 ```
@@ -234,6 +233,17 @@ mv badges /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+
+## Network Architecture  
+[Release notes для версии 2.5.1](https://forge.glpi-project.org/news/372)  
+### Порядок установки  
+```
+wget https://forge.glpi-project.org/attachments/download/2265/glpi-archires-2.6.0.tar.gz
+tar xzf *.tar.gz
+mv glpi-archires /var/www/html/glpi/plugins/archires
+chown -R www-data:www-data /<Путь до папки glpi>/html/glpi/plugins/archires
+```
+Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.
 
 
  
