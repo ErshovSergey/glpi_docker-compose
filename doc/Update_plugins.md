@@ -46,11 +46,11 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
 
-#### accounts
+#### accounts - Аккаунты
 [оф.сайт](https://github.com/InfotelGLPI/accounts/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/accounts/releases/download/2.4.2/glpi-accounts-2.4.2.tar.gz
+wget https://github.com/InfotelGLPI/accounts/releases/download/2.4.3/glpi-accounts.2.4.3.tar.gz
 tar xzf *.tar.gz
 cp -r accounts /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -72,7 +72,7 @@ rm -rf /plugins_update
 [оф.сайт](https://github.com/InfotelGLPI/positions/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/positions/releases/download/4.5.1/glpi-positions-4.5.1.tar.gz
+wget https://github.com/InfotelGLPI/positions/releases/download/4.5.2/glpi-positions.4.5.2.tar.gz
 tar xzf *.tar.gz
 cp -r positions /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -238,13 +238,28 @@ rm -rf /plugins_update
 [Release notes для версии 2.6.0](https://forge.glpi-project.org/news/385)-последняя для версии 9.3  
 ### Порядок установки  
 ```
+mkdir /plugins_update && cd /plugins_update
 wget https://forge.glpi-project.org/attachments/download/2265/glpi-archires-2.6.0.tar.gz
 tar xzf *.tar.gz
 mv glpi-archires /var/www/html/glpi/plugins/archires
 chown -R www-data:www-data /<Путь до папки glpi>/html/glpi/plugins/archires
+rm -rf /plugins_update && cd /
 ```
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
 
 
+## timelineticket - Сроки заявок
+[Оф.сайт](https://github.com/pluginsGLPI/timelineticket)  
+### Порядок установки  
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.3%2B1.1/glpi-timelineticket-9.3+1.1.tar.gz
+tar xzf *.tar.gz
+mv timelineticket /var/www/html/glpi/plugins/timelineticket
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
+[Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
  
