@@ -200,6 +200,7 @@ mv domains /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
 ```
+[Настройка уведомлений о сроках доменов](./AlertExpiredDomains.md)
  
 #### databases  
 [оф.сайт](https://github.com/InfotelGLPI/databases)
