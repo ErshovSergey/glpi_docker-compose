@@ -19,7 +19,7 @@ services:
       - EMAIL=${LETS_EMAIL}
       - URL=${LETS_URL}
       - SUBDOMAINS=${LETS_SUBDOMAIN}
-      - EXTRA_DOMAINS=${EXTRA_DOMAINS}      
+      - EXTRA_DOMAINS=${EXTRA_DOMAINS}
       - ONLY_SUBDOMAINS=true
       - VALIDATION=http
       - TZ=Europe/Moscow
