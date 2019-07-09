@@ -249,7 +249,6 @@ rm -rf /plugins_update && cd /
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
 
-
 ## timelineticket - Сроки заявок
 [Оф.сайт](https://github.com/pluginsGLPI/timelineticket)  
 ### Порядок установки  
@@ -258,6 +257,18 @@ mkdir /plugins_update && cd /plugins_update
 wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.3%2B1.1/glpi-timelineticket-9.3+1.1.tar.gz
 tar xzf *.tar.gz
 mv timelineticket /var/www/html/glpi/plugins/timelineticket
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
+## formcreator - Сроки заявок
+[Оф.сайт](https://github.com/pluginsGLPI/formcreator)  
+### Порядок установки  
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/formcreator/releases/download/v2.8.3/glpi-formcreator-2.8.3.tar.bz2
+tar xjf *.tar.bz2
+ mv formcreator /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
