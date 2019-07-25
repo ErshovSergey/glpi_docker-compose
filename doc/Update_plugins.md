@@ -261,7 +261,7 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
 
-## formcreator - Сроки заявок
+## formcreator - Формы запросов
 [Оф.сайт](https://github.com/pluginsGLPI/formcreator)  
 ### Порядок установки  
 ```
@@ -272,6 +272,19 @@ tar xjf *.tar.bz2
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
+
+## actualtime - учет времени
+[Оф.сайт](https://github.com/ticgal/actualtime/releases)  
+### Порядок установки  
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/ticgal/actualtime/releases/download/1.2.0/actualtime-1.2.0.tar.tgz
+tar xvf *.tar.tgz
+mv actualtime /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
  
