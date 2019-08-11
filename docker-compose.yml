@@ -1,16 +1,6 @@
-version: '2'
+version: "2"
 
 services:
-  mysql:
-    image: mysql:5.7
-    volumes:
-      - "${GLPI_PATH}/mysql_data:/var/lib/mysql"
-      - "${GLPI_PATH}/mysql_backup:/mysql_backup"
-    restart: always
-    container_name: "${GLPI_NAME}_mysql"
-    env_file:
-      - ./.env
-
   glpi:
     environment:
       - "/etc/timezone:/etc/timezone:ro"
@@ -28,6 +18,7 @@ services:
     build:
       context: glpi
       dockerfile: Dockerfile
+    privileged: true
     hostname: glpi
     volumes:
       - "${GLPI_PATH}/html:/var/www/html"
@@ -40,6 +31,18 @@ services:
     depends_on:
       - mysql
     restart: always
+
 #    logging:
 #      driver: none
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - "${GLPI_PATH}/mysql_data:/var/lib/mysql"
+      - "${GLPI_PATH}/mysql_backup:/mysql_backup"
+    restart: always
+    container_name: "${GLPI_NAME}_mysql"
+    env_file:
+      - ./.env
+
 

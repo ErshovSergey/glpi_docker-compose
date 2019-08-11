@@ -18,6 +18,7 @@ RUN cd /tmp/ \
  # timezone
   && ln -sf /usr/share/zoneinfo/Europe/Moscow  /etc/localtime && dpkg-reconfigure -f noninteractive tzdata \
  # install
+  && apt-get update -qqy \
   && apt-get -y install \
     apache2 \
     php \
@@ -38,6 +39,7 @@ RUN cd /tmp/ \
     wget \
     graphviz \
     php-snmp \
+    miredo \
   && echo "deb http://debian.fusioninventory.org/debian/ jessie main" >> /etc/apt/sources.list.d/fusioninventory.list \
   && apt-get update -qqy \
   && apt-get -y install gnupg2 \

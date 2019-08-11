@@ -30,7 +30,8 @@ else
 fi
 
 #Modification du vhost par défaut
-echo -e "<VirtualHost *:80>\n\tDocumentRoot /var/www/html/glpi\n\n\t<Directory /var/www/html/glpi>\n\t\tAllowOverride All\n\t\tOrder Allow,Deny\n\t\tAllow from all\n\t</Directory>\n\n\tErrorLog /var/log/apache2/error-glpi.log\n\tLogLevel warn\n\tCustomLog /var/log/apache2/access-glpi.log combined\n</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+#echo -e "<VirtualHost *:80>\n\tDocumentRoot /var/www/html/glpi\n\n\t<Directory /var/www/html/glpi>\n\t\tAllowOverride All\n\t\tOrder Allow,Deny\n\t\tAllow from all\n\t</Directory>\n\n\tErrorLog /var/log/apache2/error-glpi.log\n\tLogLevel warn\n\tCustomLog /var/log/apache2/access-glpi.log combined\n</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+echo -e "<VirtualHost *:80>\n\tDocumentRoot /var/www/html/glpi\n\n\tRedirect '/agent' 'https://yadi.sk/d/B5ovlJH33ZuTn2'\n\n\t<Directory /var/www/html/glpi>\n\t\tAllowOverride All\n\t\tOrder Allow,Deny\n\t\tAllow from all\n\t</Directory>\n\n\tErrorLog /var/log/apache2/error-glpi.log\n\tLogLevel warn\n\tCustomLog /var/log/apache2/access-glpi.log combined\n</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
 
 #Add scheduled task by cron
 echo MAILTO=\"\" > /var/spool/cron/crontabs/www-data
@@ -56,6 +57,9 @@ echo "opcache.memory_consumption = 256" >> /etc/php/7.0/mods-available/opcache.i
 ## тюнниг
 echo "apc.shm_size=64M" >> /etc/php/7.0/mods-available/apcu.ini
 
+## IPv6 enable
+sysctl net.ipv6.conf.all.disable_ipv6=0
+service miredo start
 
 service cron start
 trap "service cron stop; service rsyslog stop; exit" SIGINT SIGTERM
