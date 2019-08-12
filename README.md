@@ -108,22 +108,21 @@ ${GLPI_PATH}/logs/apache2/*
 ![Settings glpi-mysql](./glpi-mysql_settings.png)  
 Для подключения к sql серверу указать **mysql**, **glpi** и пароль из **mysql.env**.
 
-#### [Интеграция с Active Directory](./doc/GLPI_ActiveDirectory_Authentication_Setting.md)
-
-#### Экспорт в PDF с использование кирилицы
+#### Экспорт в PDF с использование кирилицы  
 Настраивается в **Setup\General\Default values**  
 в поле **PDF export font** указать шрифт DejaVuSans.  
 Сохранить и перелогинится.  
 
 Расширить функционал можно с помощью плагинов.  
 [Комплектовка - racks](./doc/plugins_BaysManagement.md) - управление содержимым стоек  
-#### [Обновление plugins](doc/Update_plugins.md)
  
-#### Восстанавить базу mysql можно командой
+#### Восстанавить базу mysql можно командой  
 ```
 cat /var/www/html/glpi.hostame.ru_sql | mysql -h mysql -u root -p
 ```
-#### [Обновление glpi](doc/Update_glpi.md)
-#### [Отправка почты через gmail.com](doc/sent_mail_via_gmail.md)
-#### [TeamViewer ID как ссылка для запуска TeamViewer](doc/teamviewer-ID-as-link.md)
-#### [Номер телефона как ссылка tel:](doc/phone_as_link.md)
+#### [Обновление glpi](doc/Update_glpi.md)  
+#### [Обновление plugins](doc/Update_plugins.md)  
+#### [Интеграция с Active Directory](./doc/GLPI_ActiveDirectory_Authentication_Setting.md)  
+#### [Отправка почты через gmail.com](doc/sent_mail_via_gmail.md)  
+#### [TeamViewer ID как ссылка для запуска TeamViewer](doc/teamviewer-ID-as-link.md)  
+#### [Номер телефона как ссылка tel:](doc/phone_as_link.md)  
