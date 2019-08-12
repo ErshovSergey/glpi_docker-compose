@@ -126,3 +126,4 @@ cat /var/www/html/glpi.hostame.ru_sql | mysql -h mysql -u root -p
 #### [Обновление glpi](doc/Update_glpi.md)
 #### [Отправка почты через gmail.com](doc/sent_mail_via_gmail.md)
 #### [TeamViewer ID как ссылка для запуска TeamViewer](doc/teamviewer-ID-as-link.md)
+#### [Номер телефона как ссылка tel:](doc/phone_as_link.md)
