@@ -10,7 +10,7 @@
 ```
 в  
 ```
-      echo "<td><label for='textfield_mobile$mobilerand'>" . __('Mobile phone') . "</label>";
+      echo "<td><label for='textfield_mobile$mobilerand'>" . __('Phone') . "</label>";
       $tel_number = preg_replace("/ |-|\+/", "", $this->fields["phone"]);
       echo "<a href=tel:\"${tel_number}\"> ☎...</a>";
       echo "</td><td>";
@@ -34,7 +34,7 @@
 ```
 в  
 ```
-      echo "<td><label for='textfield_mobile$mobilerand'>" . __('Mobile phone') . "</label>";
+      echo "<td><label for='textfield_mobile$mobilerand'>" . __('Phone 2') . "</label>";
       $tel_number = preg_replace("/ |-|\+/", "", $this->fields["phone2"]);
       echo "<a href=tel:\"${tel_number}\"> ☎...</a>";
       echo "</td><td>";
