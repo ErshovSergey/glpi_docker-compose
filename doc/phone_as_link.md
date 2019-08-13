@@ -12,7 +12,7 @@
 ```
       echo "<td><label for='textfield_mobile$mobilerand'>" . __('Phone') . "</label>";
       $tel_number = preg_replace("/ |-|\+/", "", $this->fields["phone"]);
-      echo "<a href=tel:\"${tel_number}\"> ☎...</a>";
+      echo "<a href=tel:${tel_number}> ☎...</a>";
       echo "</td><td>";
 ```
 
@@ -24,7 +24,7 @@
 ```
       echo "<td><label for='textfield_mobile$mobilerand'>" . __('Mobile phone') . "</label>";
       $tel_number = preg_replace("/ |-|\+/", "", $this->fields["mobile"]);
-      echo "<a href=tel:\"${tel_number}\"> ☎...</a>";
+      echo "<a href=tel:${tel_number}> ☎...</a>";
       echo "</td><td>";
 ```
 
@@ -36,7 +36,7 @@
 ```
       echo "<td><label for='textfield_mobile$mobilerand'>" . __('Phone 2') . "</label>";
       $tel_number = preg_replace("/ |-|\+/", "", $this->fields["phone2"]);
-      echo "<a href=tel:\"${tel_number}\"> ☎...</a>";
+      echo "<a href=tel:${tel_number}> ☎...</a>";
       echo "</td><td>";
 ```
 
