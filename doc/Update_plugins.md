@@ -285,6 +285,19 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
 
+## impacts - связь между элементами  
+[Оф.сайт](https://github.com/tomolimo/impacts)  
+### Порядок установки  
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/tomolimo/impacts/releases/download/1.3.2/impacts-1.3.2.zip
+apt-get install unzip
+unzip impacts-1.3.2.zip
+mv impacts /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
  
