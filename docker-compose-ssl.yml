@@ -1,0 +1,62 @@
+version: "2"
+# при использовании доступа по ssl
+# ключ и сертификат положить в ${DATA_PATH}/certs
+# имя ключа и сертификата должны совпадать с переменной $VIRTUAL_HOST
+# т.е. в текущем случае
+# cloud.example.ru.crt
+# cloud.example.ru.key
+
+services:
+  glpi:
+    environment:
+      - GLPI_VERSION=${GLPI_VERSION}
+      - GLPI_upload_max_filesize=${GLPI_upload_max_filesize}
+      - GLPI_post_max_size=${GLPI_post_max_size}
+      - GLPI_memory_limit=${GLPI_memory_limit}
+      - GLPI_max_execution_time=${GLPI_max_execution_time}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - HTTPS_PROXY=${HTTPS_PROXY}
+      - VIRTUAL_HOST=glpi.example.ru
+    build:
+      context: glpi
+      dockerfile: Dockerfile
+    privileged: true
+    hostname: glpi
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+      - "${GLPI_PATH}/html:/var/www/html"
+      - "${GLPI_PATH}/logs/apache2:/var/log/apache2"
+    container_name: "${GLPI_NAME}_glpi"
+    links:
+      - mysql:mysql
+    depends_on:
+      - mysql
+    restart: always
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - "${GLPI_PATH}/mysql_data:/var/lib/mysql"
+      - "${GLPI_PATH}/mysql_backup:/mysql_backup"
+    restart: always
+    container_name: "${GLPI_NAME}_mysql"
+#    env_file:
+#      - ./.env
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy:alpine
+    hostname: reverseproxy
+    container_name: "${GLPI_NAME}_reverse_proxy"
+    ports:
+      -  "${HTTP_IP}:${HTTP_PORT}:80"
+      -  "${HTTP_IP}:${HTTPS_PORT}:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ${GLPI_PATH}/certs:/etc/nginx/certs:ro
+      - ${GLPI_PATH}/vhost.d:/etc/nginx/vhost.d
+    restart: always
+
