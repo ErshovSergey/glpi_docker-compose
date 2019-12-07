@@ -1,4 +1,5 @@
-## Контроль за пролонгацией доменов  
+## FusionInventory
+### Установка на Debian
 По  [мотивам](http://fusioninventory.org/documentation/agent/installation/linux/deb.html)  
 Устанавливаем зависимости
 ```
