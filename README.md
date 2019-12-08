@@ -100,3 +100,9 @@ ${GLPI_PATH}/html/glpi/files/_log/*
 ${GLPI_PATH}/logs/apache2/*
 ```
 
+#### Ссылка на агент FusionInventory
+Для размещения ссылки на скачивание агента FusionInventory на главной странице необходимо создать папку _<Folder glpi>/html/glpi/FI-agent/_. В неё помещать дистрибутивы агента FusionInventory.  
+Настроить ссылку _Настройки\Общий_, поместить в поле _Текст в поле входа (поддерживаются HTML-теги)_  
+```
+Get agent FusionInventory --> <a color: #FFC18B; target="_blank" href="FI-agent/" title="agent FusionInventory"><font color="#FF0000;">here</font></a>
+```
