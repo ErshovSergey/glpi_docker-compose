@@ -17,8 +17,8 @@ rm -rf /plugins_update
 [оф.сайт](https://forge.glpi-project.org/projects/behaviors/files) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2251/glpi-behaviors-2.1.1.tar.gz
-tar -xzf glpi-behaviors-2.1.1.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2295/glpi-behaviors-2.1.4.tar.gz
+tar -xzf *.tar.gz
 cp -r behaviors /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update
