@@ -106,3 +106,4 @@ ${GLPI_PATH}/logs/apache2/*
 ```
 Get agent FusionInventory --> <a color: #FFC18B; target="_blank" href="FI-agent/" title="agent FusionInventory"><font color="#FF0000;">here</font></a>
 ```
+[Инструкция по подготовке агента FusionInventory](FusionInventory-agent/Readme.md)
