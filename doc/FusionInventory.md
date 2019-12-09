@@ -1,7 +1,6 @@
-## FusionInventory
-### Установка на Debian
+## FusionInventory - Установка на Debian  
 По  [мотивам](http://fusioninventory.org/documentation/agent/installation/linux/deb.html)  
-Устанавливаем зависимости
+Устанавливаем зависимости  
 ```
 apt-get -y install dmidecode hwdata ucf hdparm \
   perl libuniversal-require-perl libwww-perl libparse-edid-perl \
