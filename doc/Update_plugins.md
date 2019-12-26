@@ -6,77 +6,89 @@
 [оф.сайт](https://forge.glpi-project.org/projects/appliances/files) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2259/glpi-appliances-2.4.1.tar.gz
-tar -xzf glpi-appliances-2.4.1.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2285/glpi-appliances-2.5.0.tar.gz
+tar -xzf *.tar.gz
 cp -r appliances /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### Behaviours
 [оф.сайт](https://forge.glpi-project.org/projects/behaviors/files) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2295/glpi-behaviors-2.1.4.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2296/glpi-behaviors-2.2.2.tar.gz
 tar -xzf *.tar.gz
 cp -r behaviors /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### Environment
 [оф.сайт](https://github.com/InfotelGLPI/environment/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/environment/releases/download/2.2.1/glpi-environment-2.2.1.tar.gz
+wget https://github.com/InfotelGLPI/environment/releases/download/2.3.0/glpi-environment-2.3.0.tar.gz
 tar -xzf *.tar.gz
 cp -r environment /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### FusionInventory
 [оф.сайт](https://github.com/fusioninventory/fusioninventory-for-glpi/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.3%2B1.4/fusioninventory-9.3+1.4.tar.bz2
+wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.4%2B2.3/fusioninventory-9.4+2.3.tar.bz2
 tar xjf *.tar.bz2
 cp -r fusioninventory /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### accounts - Аккаунты
 [оф.сайт](https://github.com/InfotelGLPI/accounts/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/accounts/releases/download/2.4.3/glpi-accounts.2.4.3.tar.gz
+wget https://github.com/InfotelGLPI/accounts/releases/download/2.5.0/glpi-accounts.2.5.0.tar.gz
 tar xzf *.tar.gz
 cp -r accounts /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### archires
 [оф.сайт](https://forge.glpi-project.org/projects/archires/files) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2265/glpi-archires-2.6.0.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2297/glpi-archires-2.7.0.tar.gz
 tar xzf *.tar.gz
-cp -r archires /var/www/html/glpi/plugins/
+cp -r archires /var/www/html/glpi/plugins/archires
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
+
+#### Badges
+[оф.сайт](https://github.com/InfotelGLPI/badges) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/badges/releases/download/2.5.0/glpi-badges-2.5.0.tar.gz
+tar xzf *.tar.gz
+cp -r badges /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
 
 #### positions
 [оф.сайт](https://github.com/InfotelGLPI/positions/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/positions/releases/download/4.5.2/glpi-positions.4.5.2.tar.gz
+wget https://github.com/InfotelGLPI/positions/releases/download/4.6.0/glpi-positions-4.6.0.tar.gz
 tar xzf *.tar.gz
 cp -r positions /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### Print to pdf - PDF
@@ -116,11 +128,11 @@ rm -rf /plugins_update
 [оф.сайт](https://github.com/pluginsGLPI/timelineticket/releases)
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.3%2B1.0/glpi-timelineticket-9.3+1.0.tar.gz
+wget https://github.com/pluginsGLPI/timelineticket/releases/download/9.4%2B1.0/glpi-timelineticket-9.4+1.0.tar.gz
 tar xzf *.tar.gz
 cp -r timelineticket /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### telegram bot
@@ -194,11 +206,11 @@ rm -rf /plugins_update
 [оф.сайт](https://github.com/InfotelGLPI/domains)
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/domains/releases/download/2.0.2/glpi-domains-2.0.2.tar.gz
+wget https://github.com/InfotelGLPI/domains/releases/download/2.1.0/glpi-domains-2.1.0.tar.gz
 tar xzf *.tar.gz
-mv domains /var/www/html/glpi/plugins/
+cp -r domains /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 [Настройка уведомлений о сроках доменов](./AlertExpiredDomains.md)
  
@@ -217,11 +229,11 @@ rm -rf /plugins_update
 [оф.сайт](https://github.com/InfotelGLPI/webapplications)
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/webapplications/releases/download/2.5.2/glpi-webapplications-2.5.2.tar.gz
+wget https://github.com/InfotelGLPI/webapplications/releases/download/2.6.0/glpi-webapplications-2.6.0.tar.gz
 tar xzf *.tar.gz
-mv webapplications /var/www/html/glpi/plugins/
+cp -r webapplications /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### badges  
@@ -240,10 +252,10 @@ rm -rf /plugins_update
 ### Порядок установки  
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2265/glpi-archires-2.6.0.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2297/glpi-archires-2.7.0.tar.gz
 tar xzf *.tar.gz
-mv glpi-archires /var/www/html/glpi/plugins/archires
-chown -R www-data:www-data /<Путь до папки glpi>/html/glpi/plugins/archires
+cp -r archires /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
