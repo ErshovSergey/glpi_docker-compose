@@ -82,3 +82,66 @@
        echo "<td>"._x('location', 'State')."</td>";
        echo "<td>";
 ```
+
+#### Поставщики
+```
+*** 124,130 ****
+        echo "<tr class='tab_bg_1'>";
+        echo "<td>". __('Phone')."</td>";
+        echo "<td>";
+!       Html::autocompletionTextField($this, "phonenumber");
+        echo "</td>";
+        echo "<td rowspan='8' class='middle right'>".__('Comments')."</td>";
+        echo "<td class='center middle' rowspan='8'>";
+--- 124,132 ----
+        echo "<tr class='tab_bg_1'>";
+        echo "<td>". __('Phone')."</td>";
+        echo "<td>";
+!       Html::autocompletionTextField($this, "phonenumber");
+!       echo "<a href='javascript: document.location.href = \"tel:\"+ document.getElementsByName(\"phonenumber\")[0].value ;'> ☎...</a>";
+!
+        echo "</td>";
+        echo "<td rowspan='8' class='middle right'>".__('Comments')."</td>";
+        echo "<td class='center middle' rowspan='8'>";
+***************
+*** 135,152 ****
+        echo "<td>".__('Fax')."</td>";
+        echo "<td>";
+        Html::autocompletionTextField($this, "fax");
+        echo "</td></tr>";
+
+        echo "<tr class='tab_bg_1'>";
+        echo "<td>".__('Website')."</td>";
+        echo "<td>";
+        Html::autocompletionTextField($this, "website");
+        echo "</td></tr>";
+-
+        echo "<tr class='tab_bg_1'>";
+        echo "<td>"._n('Email', 'Emails', 1)."</td>";
+        echo "<td>";
+        Html::autocompletionTextField($this, "email");
+        echo "</td></tr>";
+
+        echo "<tr class='tab_bg_1'>";
+--- 137,156 ----
+        echo "<td>".__('Fax')."</td>";
+        echo "<td>";
+        Html::autocompletionTextField($this, "fax");
++       echo "<a href='javascript: document.location.href = \"tel:\"+ document.getElementsByName(\"fax\")[0].value ;'> ☎...</a>";
+        echo "</td></tr>";
+
+        echo "<tr class='tab_bg_1'>";
+        echo "<td>".__('Website')."</td>";
+        echo "<td>";
+        Html::autocompletionTextField($this, "website");
++       echo "<a href='javascript: document.location.href = \"http:\/\/\"+document.getElementsByName(\"website\")[0].value'>  🌐..</a>";
+        echo "</td></tr>";
+        echo "<tr class='tab_bg_1'>";
+        echo "<td>"._n('Email', 'Emails', 1)."</td>";
+        echo "<td>";
+        Html::autocompletionTextField($this, "email");
++       echo "<a href='javascript: document.location.href = \"mailto:\"+document.getElementsByName(\"email\")[0].value   ;'>  📧..</a>";
+        echo "</td></tr>";
+
+        echo "<tr class='tab_bg_1'>";
+```
