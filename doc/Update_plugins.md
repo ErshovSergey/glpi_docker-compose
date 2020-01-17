@@ -310,6 +310,21 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
 
+## ldapcomputers - LDAP computers - плагин для GLPI
+[Оф.сайт](https://github.com/akm77/ldapcomputers)  
+### Порядок установки  
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/akm77/ldapcomputers/archive/master.zip
+
+apt-get install unzip
+unzip master.zip
+mv ldapcomputers-master /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+mv /var/www/html/glpi/plugins/ldapcomputers-master /var/www/html/glpi/plugins/ldapcomputers
+rm -rf /plugins_update && cd /
+```
+
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
  
