@@ -332,8 +332,11 @@ rm -rf /plugins_update && cd /
 ```
 mkdir /plugins_update && cd /plugins_update
 wget https://github.com/mateusznitka/protocolsmanager/releases/download/v1.0/protocolsmanager.tar.gz
-tar xzf *.tar.gz
-mv actualtime /var/www/html/glpi/plugins/
+mkdir protocolsmanager
+cd protocolsmanager
+tar xzf ../protocolsmanager.tar.gz
+cd ..
+mv protocolsmanager /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
