@@ -325,6 +325,19 @@ mv /var/www/html/glpi/plugins/ldapcomputers-master /var/www/html/glpi/plugins/ld
 rm -rf /plugins_update && cd /
 ```
 
+
+## protocolsmanager  - Protocols Manager  
+[Оф.сайт](https://github.com/mateusznitka/protocolsmanager/releases)  
+### Порядок установки  
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/mateusznitka/protocolsmanager/releases/download/v1.0/protocolsmanager.tar.gz
+tar xzf *.tar.gz
+mv actualtime /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
  
