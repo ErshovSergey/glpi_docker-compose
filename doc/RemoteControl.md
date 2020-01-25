@@ -1,0 +1,6 @@
+https://forum.glpi-project.org/viewtopic.php?id=2599
+
+How to remotely administer a Windows client computer by using Configuration Manager https://docs.microsoft.com/en-us/configmgr/core/clients/manage/remote-control/remotely-administer-a-windows-client-computer
+
+Running Configuration Manager 2012 Remote Control standalone https://ccmexec.com/2012/05/running-configuration-manager-2012-remote-control-standalone/
+
