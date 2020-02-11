@@ -218,7 +218,7 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/InfotelGLPI/databases)
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/databases/releases/download/2.1.1/glpi-databases-2.1.1.tar.gz
+wget https://github.com/InfotelGLPI/databases/releases/download/2.2.1/glpi-databases-2.2.1.tar.gz
 tar xzf *.tar.gz
 mv databases /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -331,12 +331,20 @@ rm -rf /plugins_update && cd /
 ### Порядок установки  
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/mateusznitka/protocolsmanager/releases/download/v1.0/protocolsmanager.tar.gz
-mkdir protocolsmanager
-cd protocolsmanager
-tar xzf ../protocolsmanager.tar.gz
-cd ..
+wget https://github.com/mateusznitka/protocolsmanager/releases/download/v1.1.2/protocolsmanager.tar.gz
+tar xzf protocolsmanager.tar.gz
 mv protocolsmanager /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
+#### ldapcomputers
+[оф.сайт](https://github.com/akm77/ldapcomputers/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/akm77/ldapcomputers/releases/download/0.3/glpi-ldapcomputers-0.3.tar.bz2
+tar xjf *.tar.bz2
+cp -r ldapcomputers /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
