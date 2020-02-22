@@ -108,3 +108,5 @@ Get agent FusionInventory --> <a color: #FFC18B; target="_blank" href="FI-agent/
 ```
 [Инструкция по подготовке преднастроенного агента FusionInventory для Windows](FusionInventory-agent/Readme.md)  
 [Установка агента FusionInventory на Debian](doc/FusionInventory.md)  
+
+[Программы для доступа к удаленным рабочим столам](doc/AccessToRemotePC.md)  
