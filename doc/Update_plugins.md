@@ -1,5 +1,8 @@
 ### Обновление plugins
 Все действия в контейнере с glpi.  
+```
+docker exec -i -t <container name>_glpi bash
+```
 После окончания **Setup\Plugin** необходимо обновить/инсталировать (**Upgrade/Install**) и активировать(**Enable**) по необходимости.
 
 #### Appliances
@@ -348,6 +351,16 @@ cp -r ldapcomputers /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
+
+#### advancedplanning  
+[оф.сайт](https://github.com/pluginsGLPI/advancedplanning/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/advancedplanning/releases/download/0.1/glpi-advancedplanning-0.1.tar.bz2
+tar xjf *.tar.bz2
+cp -r advancedplanning /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
 
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
