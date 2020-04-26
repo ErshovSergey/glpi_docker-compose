@@ -8,7 +8,7 @@
 **Тип** - _Заявка_  
 Перевод шаблона  по умолчанию
 ```
-##ticket.shortentity## - ##ticket.title## ##FOREACHLAST followups## 
+##ticket.shortentity## - ##ticket.title## (##ticket.id##) ##FOREACHLAST followups## 
 ##followup.author## написал(а) комментарий: ##followup.description## ##ENDFOREACHfollowups##
 ===================
 ##ticket.url##
@@ -26,7 +26,7 @@
 ```
 Новая заявка (Инициатор: ##ticket.authors##)
 Организация: "##ticket.entity##"
-Заголовок: ##ticket.title##
+Заголовок: ##ticket.title## (##ticket.id##)
 Описание: ##ticket.content##
 Назначено: ##ticket.assigntousers##
 ##ticket.url##
@@ -42,7 +42,7 @@
 **Тип** - _Заявка_  
 Перевод шаблона  по умолчанию
 ```
-##ticket.shortentity## - ##ticket.title## ##FOREACHLASTdocuments##
+##ticket.shortentity## - ##ticket.title## (##ticket.id##) ##FOREACHLASTdocuments##
 Добавлен документ "##document.filename##" ##ENDFOREACHdocuments##
 ============================
 ##ticket.url##
@@ -58,7 +58,7 @@
 **Тип** - _Заявка_  
 Перевод шаблона  по умолчанию
 ```
-##ticket.shortentity## - ##ticket.title## 
+##ticket.shortentity## - ##ticket.title## (##ticket.id##) 
 Задача к исполнению:##FOREACH last tasks## ##task.description## ##ENDFOREACHtasks##
 ===================
 ##ticket.url##
