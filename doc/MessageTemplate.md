@@ -29,6 +29,7 @@
 Заголовок: ##ticket.title## (##ticket.id##)
 Описание: ##ticket.content##
 Назначено: ##ticket.assigntousers##
+===================
 ##ticket.url##
 ```
 
