@@ -8,7 +8,7 @@
 **Тип** - _Заявка_  
 Перевод шаблона  по умолчанию
 ```
-##ticket.shortentity## - ##ticket.title## (##ticket.id##) ##FOREACHLAST followups## 
+'##ticket.shortentity##' --- "##ticket.title##" (ID: ##ticket.id##)  ##FOREACHLAST followups## 
 ##followup.author## написал(а) комментарий: ##followup.description## ##ENDFOREACHfollowups##
 ===================
 ##ticket.url##
@@ -42,7 +42,7 @@
 **Тип** - _Заявка_  
 Перевод шаблона  по умолчанию
 ```
-##ticket.shortentity## - ##ticket.title## (##ticket.id##) ##FOREACHLASTdocuments##
+'##ticket.shortentity##' --- "##ticket.title##" (ID: ##ticket.id##) ##FOREACHLASTdocuments##
 Добавлен документ "##document.filename##" ##ENDFOREACHdocuments##
 ============================
 ##ticket.url##
@@ -54,11 +54,11 @@
 **Событие** - _Новое задание_  
 **Получатели** - _Специалист, ответственный за задачу_  
 ### Шаблон
-**Наименование** - _Новый задача в заявке (telegram)_  
+**Наименование** - _Новая задача в заявке (telegram)_  
 **Тип** - _Заявка_  
 Перевод шаблона  по умолчанию
 ```
-##ticket.shortentity## - ##ticket.title## (##ticket.id##) 
+'##ticket.shortentity##' --- "##ticket.title##" (ID: ##ticket.id##) 
 Задача к исполнению:##FOREACH last tasks## ##task.description## ##ENDFOREACHtasks##
 ===================
 ##ticket.url##
