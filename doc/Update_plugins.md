@@ -281,9 +281,9 @@ rm -rf /plugins_update && cd /
 ### Порядок установки  
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/pluginsGLPI/formcreator/releases/download/v2.8.3/glpi-formcreator-2.8.3.tar.bz2
+wget https://github.com/pluginsGLPI/formcreator/releases/download/v2.10.2/glpi-formcreator-2.10.2.tar.bz2
 tar xjf *.tar.bz2
- mv formcreator /var/www/html/glpi/plugins/
+mv formcreator /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
