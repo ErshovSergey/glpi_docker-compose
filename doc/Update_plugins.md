@@ -9,7 +9,8 @@ docker exec -i -t <container name>_glpi bash
 [оф.сайт](https://forge.glpi-project.org/projects/appliances/files) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2285/glpi-appliances-2.5.0.tar.gz
+#wget https://forge.glpi-project.org/attachments/download/2285/glpi-appliances-2.5.0.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2320/glpi-appliances-3.1.0.tar.gz
 tar -xzf *.tar.gz
 cp -r appliances /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -20,7 +21,8 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://forge.glpi-project.org/projects/behaviors/files) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2296/glpi-behaviors-2.2.2.tar.gz
+#wget https://forge.glpi-project.org/attachments/download/2296/glpi-behaviors-2.2.2.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2316/glpi-behaviors-2.4.1.tar.gz
 tar -xzf *.tar.gz
 cp -r behaviors /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -31,7 +33,8 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/InfotelGLPI/environment/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/environment/releases/download/2.3.0/glpi-environment-2.3.0.tar.gz
+# wget https://github.com/InfotelGLPI/environment/releases/download/2.3.0/glpi-environment-2.3.0.tar.gz
+wget https://github.com/InfotelGLPI/environment/releases/download/2.4.1/glpi-environment-2.4.1.tar.gz
 tar -xzf *.tar.gz
 cp -r environment /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -42,7 +45,8 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/fusioninventory/fusioninventory-for-glpi/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.4%2B2.3/fusioninventory-9.4+2.3.tar.bz2
+#wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.4%2B2.3/fusioninventory-9.4+2.3.tar.bz2
+wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5.0%2B1.0/fusioninventory-9.5.0+1.0.tar.bz2
 tar xjf *.tar.bz2
 cp -r fusioninventory /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -53,7 +57,8 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/InfotelGLPI/accounts/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/accounts/releases/download/2.5.0/glpi-accounts.2.5.0.tar.gz
+#wget https://github.com/InfotelGLPI/accounts/releases/download/2.5.0/glpi-accounts.2.5.0.tar.gz
+wget https://github.com/InfotelGLPI/accounts/releases/download/2.6.0/glpi-accounts-2.6.0.tar.gz
 tar xzf *.tar.gz
 cp -r accounts /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -120,7 +125,8 @@ rm -rf /plugins_update
 [оф.сайт](https://forge.glpi-project.org/projects/reports/files)
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://forge.glpi-project.org/attachments/download/2253/glpi-reports-1.12.0.tar.gz
+#wget https://forge.glpi-project.org/attachments/download/2253/glpi-reports-1.12.0.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2317/glpi-plugin-reports-1.14.0.tar.gz
 tar xzf *.tar.gz
 cp -r reports /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -209,7 +215,8 @@ rm -rf /plugins_update
 [оф.сайт](https://github.com/InfotelGLPI/domains)
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/domains/releases/download/2.1.0/glpi-domains-2.1.0.tar.gz
+#wget https://github.com/InfotelGLPI/domains/releases/download/2.1.0/glpi-domains-2.1.0.tar.gz
+wget https://github.com/InfotelGLPI/domains/releases/download/2.2.1/glpi-domains-2.2.1.tar.gz
 tar xzf *.tar.gz
 cp -r domains /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -232,7 +239,8 @@ rm -rf /plugins_update
 [оф.сайт](https://github.com/InfotelGLPI/webapplications)
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/webapplications/releases/download/2.6.0/glpi-webapplications-2.6.0.tar.gz
+#wget https://github.com/InfotelGLPI/webapplications/releases/download/2.6.0/glpi-webapplications-2.6.0.tar.gz
+wget https://github.com/InfotelGLPI/webapplications/releases/download/3.0.0/glpi-webapplications-3.0.0.tar.gz
 tar xzf *.tar.gz
 cp -r webapplications /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -293,9 +301,10 @@ rm -rf /plugins_update && cd /
 ### Порядок установки  
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/ticgal/actualtime/releases/download/1.2.0/actualtime-1.2.0.tar.tgz
+#wget https://github.com/ticgal/actualtime/releases/download/1.2.0/actualtime-1.2.0.tar.tgz
+wget https://github.com/ticgal/actualtime/releases/download/1.4.0/glpi-actualtime-1.4.0.tar.tgz
 tar xvf *.tar.tgz
-mv actualtime /var/www/html/glpi/plugins/
+cp -rv actualtime /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
@@ -305,10 +314,12 @@ rm -rf /plugins_update && cd /
 ### Порядок установки  
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/tomolimo/impacts/releases/download/1.3.2/impacts-1.3.2.zip
+#wget https://github.com/tomolimo/impacts/releases/download/1.3.2/impacts-1.3.2.zip
+wget https://github.com/tomolimo/impacts/archive/1.3.7.zip
 apt-get install unzip
-unzip impacts-1.3.2.zip
-mv impacts /var/www/html/glpi/plugins/
+unzip *.zip
+mv impacts-1.3.7 impacts
+cp -rv impacts /var/www/html/glpi/plugins/impacts
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
