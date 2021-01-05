@@ -36,3 +36,9 @@ rm /var/www/html/glpi/install/install.php
 ```
 cd /var/www/html/glpi/scripts/ && php innodb_migration.php
 ```
+
+#### Обновление версии mysql
+В контейнере mysql запустить, ввести пароль root для mysql
+```
+mysql_upgrade -uroot -p
+```
