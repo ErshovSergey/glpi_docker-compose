@@ -1,5 +1,4 @@
-FROM debian:buster
-#FROM debian:stretch
+FROM debian:stretch
 MAINTAINER Sergey Ershov "ershovu@gmail.com"
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -34,22 +33,18 @@ RUN cd /tmp/ \
     php-xml \
     php-apcu-bc \
     php-cas \
-    php-zip \
+    php7.0-zip \
     cron \
     rsyslog \
     wget \
     graphviz \
     php-snmp \
-    php-intl \
-    php-bz2
-RUN cd /tmp/ \
-#    miredo \
-#  && echo "deb http://debian.fusioninventory.org/debian/ jessie main" >> /etc/apt/sources.list.d/fusioninventory.list \
-#  && echo "deb http://debian.fusioninventory.org/debian/ buster main" >> /etc/apt/sources.list.d/fusioninventory.list \
+    miredo \
+  && echo "deb http://debian.fusioninventory.org/debian/ jessie main" >> /etc/apt/sources.list.d/fusioninventory.list \
   && apt-get update -qqy \
   && apt-get -y install gnupg2 \
-#  && wget -O - http://debian.fusioninventory.org/debian/archive.key | apt-key add - \
-#  && apt-key adv --keyserver keyserver.ubuntu.com --recv 049ED9B94765572E \
+  && wget -O - http://debian.fusioninventory.org/debian/archive.key | apt-key add - \
+  && apt-key adv --keyserver keyserver.ubuntu.com --recv 049ED9B94765572E \
   && apt-get -y --allow-unauthenticated install \
     lsb-release \
     libfusioninventory-agent-task-esx-perl \
@@ -60,3 +55,4 @@ RUN cd /tmp/ \
 
 COPY entrypoint.sh /opt/
 RUN chmod +x /opt/entrypoint.sh
+
