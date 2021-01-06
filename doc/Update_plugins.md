@@ -107,7 +107,7 @@ wget https://forge.glpi-project.org/attachments/download/2252/glpi-pdf-1.4.0.tar
 tar xzf *.tar.gz
 cp -r pdf /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### Human Resources
@@ -118,7 +118,7 @@ wget https://github.com/InfotelGLPI/resources/releases/download/2.5.1/glpi-resou
 tar xzf *.tar.gz
 cp -r resources /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### Additional Reports
@@ -130,7 +130,7 @@ wget https://forge.glpi-project.org/attachments/download/2317/glpi-plugin-report
 tar xzf *.tar.gz
 cp -r reports /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### timelineticket
@@ -152,7 +152,7 @@ wget https://github.com/pluginsGLPI/telegrambot/releases/download/2.0.0/glpi-tel
 tar xjf *.tar.bz2
 cp -r telegrambot /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 [Настройка](../doc/GLPI-TelegramBot.md)
 
@@ -164,7 +164,7 @@ wget https://github.com/pluginsGLPI/room/archive/3.1.2.tar.gz
 tar xzf *.tar.gz
 mv room-3.1.2 /var/www/html/glpi/plugins/room
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### GLPI treeview  
@@ -175,7 +175,7 @@ wget https://github.com/pluginsGLPI/treeview/releases/download/1.8.0/glpi-treevi
 tar xjf *.tar.bz2
 mv treeview /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### connections  
@@ -186,7 +186,7 @@ wget https://github.com/pluginsGLPI/connections/releases/download/9.3/glpi-conne
 tar xzf *.tar.gz
 mv connections /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### glpi-dataflows  
@@ -197,7 +197,7 @@ wget https://github.com/ericferon/glpi-dataflows/releases/download/v2.0.15/dataf
 tar xzf *.tar.gz
 mv dataflows /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### archisw  
@@ -208,7 +208,7 @@ wget https://github.com/ericferon/glpi-archisw/releases/download/v2.1.1/archisw-
 tar xzf *.tar.gz
 mv archisw /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### domains 
@@ -232,7 +232,7 @@ wget https://github.com/InfotelGLPI/databases/releases/download/2.2.1/glpi-datab
 tar xzf *.tar.gz
 mv databases /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 #### webapplications  
@@ -255,7 +255,7 @@ wget https://github.com/InfotelGLPI/badges/releases/download/2.4.1/glpi-badges-2
 tar xzf *.tar.gz
 mv badges /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-rm -rf /plugins_update
+rm -rf /plugins_update && cd /
 ```
 
 ## Network Architecture  
