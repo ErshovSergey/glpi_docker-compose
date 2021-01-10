@@ -330,13 +330,14 @@ rm -rf /plugins_update && cd /
 ### Порядок установки  
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/akm77/ldapcomputers/archive/master.zip
-
-apt-get install unzip
-unzip master.zip
-mv ldapcomputers-master /var/www/html/glpi/plugins/
+#wget https://github.com/akm77/ldapcomputers/archive/master.zip
+#apt-get install unzip
+#unzip master.zip
+#mv ldapcomputers-master /var/www/html/glpi/plugins/
+wget https://github.com/akm77/ldapcomputers/releases/download/0.4.1/glpi-ldapcomputers-0.4.1.tar.bz2
+tar xjf *.tar.bz2
+cp -rv ldapcomputers /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
-mv /var/www/html/glpi/plugins/ldapcomputers-master /var/www/html/glpi/plugins/ldapcomputers
 rm -rf /plugins_update && cd /
 ```
 
