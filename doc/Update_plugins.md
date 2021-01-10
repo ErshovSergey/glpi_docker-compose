@@ -302,7 +302,8 @@ rm -rf /plugins_update && cd /
 ```
 mkdir /plugins_update && cd /plugins_update
 #wget https://github.com/ticgal/actualtime/releases/download/1.2.0/actualtime-1.2.0.tar.tgz
-wget https://github.com/ticgal/actualtime/releases/download/1.4.0/glpi-actualtime-1.4.0.tar.tgz
+#wget https://github.com/ticgal/actualtime/releases/download/1.4.0/glpi-actualtime-1.4.0.tar.tgz
+wget https://github.com/ticgal/actualtime/releases/download/1.5.0/glpi-actualtime-1.5.0.tar.tgz
 tar xvf *.tar.tgz
 cp -rv actualtime /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
