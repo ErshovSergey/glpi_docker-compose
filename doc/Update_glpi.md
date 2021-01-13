@@ -42,3 +42,17 @@ cd /var/www/html/glpi/scripts/ && php innodb_migration.php
 ```
 mysql_upgrade -uroot -p
 ```
+
+#### Исправление "Access to timezone database (mysql) is not allowed."  
+
+В контейнере mysql запустить, ввести пароль root для mysql
+```
+mysql_upgrade -uroot -p
+...
+GRANT SELECT ON `mysql`.`time_zone_name` TO 'glpi'@'127.0.0.1' IDENTIFIED BY 'PassForUserGLPI';
+FLUSH PRIVILEGES;
+Ctrl+D
+...
+mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
+```
+Перезапустить mysql  
