@@ -47,7 +47,7 @@ mysql_upgrade -uroot -p
 
 В контейнере mysql запустить, ввести пароль root для mysql
 ```
-mysql_upgrade -uroot -p
+mysql -p -u root
 ...
 GRANT SELECT ON `mysql`.`time_zone_name` TO 'glpi'@'127.0.0.1' IDENTIFIED BY 'PassForUserGLPI';
 FLUSH PRIVILEGES;
