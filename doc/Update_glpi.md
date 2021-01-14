@@ -45,8 +45,9 @@ mysql_upgrade -uroot -p
 
 #### Исправление "Access to timezone database (mysql) is not allowed."  
 
-В контейнере mysql запустить, ввести пароль root для mysql
+##### В контейнере mysql запустить, ввести пароль root для mysql  
 ```
+docker exec -i -t mysql.container.name bash
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
 ...
 mysql -p -u root
@@ -59,7 +60,7 @@ Ctrl+D
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
 ```
 Перезапустить mysql  
-В контейнере glpi
+##### В контейнере glpi обновить таблицы  
 ```
 docker exec -i -t glpi.container.name bash
 /var/www/html/glpi/bin/console glpi:migration:timestamps
