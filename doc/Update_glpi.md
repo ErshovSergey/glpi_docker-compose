@@ -59,3 +59,8 @@ Ctrl+D
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
 ```
 Перезапустить mysql  
+В контейнере glpi
+```
+docker exec -i -t glpi.container.name bash
+/var/www/html/glpi/bin/console glpi:migration:timestamps
+```
