@@ -47,10 +47,13 @@ mysql_upgrade -uroot -p
 
 В контейнере mysql запустить, ввести пароль root для mysql
 ```
+mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
+...
 mysql -p -u root
 ...
-GRANT SELECT ON `mysql`.`time_zone_name` TO 'glpi'@'127.0.0.1' IDENTIFIED BY 'PassForUserGLPI';
+GRANT SELECT ON `mysql`.`time_zone_name` TO 'glpi'@'%';
 FLUSH PRIVILEGES;
+SHOW GRANTS FOR 'glpi'@'%';
 Ctrl+D
 ...
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
