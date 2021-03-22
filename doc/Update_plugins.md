@@ -374,7 +374,18 @@ tar xjf *.tar.bz2
 cp -r advancedplanning /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
+```
 
 Далее **Setup\Plugin** необходимо инсталировать (**Install**) и активировать(**Enable**) плагин.  
 [Исправить ошибки(опечатки, запросы sql)](mistakes_plugins__NetworkArchitectures.md)  
  
+#### glpi-karastock
+[оф.сайт](https://github.com/karhel/glpi-karastock/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/karhel/glpi-karastock/archive/refs/tags/1.1.tar.gz
+tar xzf 1.1.tar.gz
+mv glpi-karastock-1.1 /var/www/html/glpi/plugins/karastock
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
