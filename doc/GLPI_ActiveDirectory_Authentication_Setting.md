@@ -36,7 +36,7 @@ Language:	**preferredlanguage**
 Picture:	**thumbnailphoto**  
 Location:	**locations**  
 
-
+### Добавить реплику для использования второго LDAP сервера.
 
 ### Импорт пользователей
 **Administartion \ Users** 
@@ -49,3 +49,6 @@ Location:	**locations**
 Открываем свойства пользователя, закладка **Authorizations** - выбираем **Entry** и **Profile**, нажимаем **Add**.
 
 
+## Авторизация в лесу Active Directory
+То же самое, только порт для LDAP 3268.
+Авторизация проходит для пользователей не основных доменов.
