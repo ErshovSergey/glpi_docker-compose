@@ -315,13 +315,12 @@ rm -rf /plugins_update && cd /
 ### Порядок установки  
 ```
 mkdir /plugins_update && cd /plugins_update
-#wget https://github.com/tomolimo/impacts/releases/download/1.3.2/impacts-1.3.2.zip
-wget https://github.com/tomolimo/impacts/archive/1.3.7.zip
+#wget https://github.com/tomolimo/impacts/archive/1.3.7.zip
+wget https://github.com/tomolimo/impacts/releases/download/2.0.3/impacts-2.0.3.zip
 apt-get install unzip
 unzip *.zip
-mv impacts-1.3.7 impacts
 cp -rv impacts /var/www/html/glpi/plugins/impacts
-chown -R www-data:www-data /var/www/html/glpi/plugins/
+cp -rv impacts /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
 
