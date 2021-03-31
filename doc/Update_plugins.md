@@ -384,8 +384,19 @@ rm -rf /plugins_update && cd /
 ```
 mkdir /plugins_update && cd /plugins_update
 wget https://github.com/karhel/glpi-karastock/archive/refs/tags/1.1.tar.gz
-tar xzf 1.1.tar.gz
+tar xzf *.tar.gz
 mv glpi-karastock-1.1 /var/www/html/glpi/plugins/karastock
 chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
+#### positions
+[оф.сайт](https://github.com/InfotelGLPI/positions/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/positions/releases/download/5.0.0/glpi-positions-5.0.0.tar.gz
+tar xzf *.tar.gz
+mv glpi-karastock-1.1 /var/www/html/glpi/plugins/karastock
+cp -R positions /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
