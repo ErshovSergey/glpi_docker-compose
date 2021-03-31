@@ -21,8 +21,8 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://forge.glpi-project.org/projects/behaviors/files) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-#wget https://forge.glpi-project.org/attachments/download/2296/glpi-behaviors-2.2.2.tar.gz
-wget https://forge.glpi-project.org/attachments/download/2316/glpi-behaviors-2.4.1.tar.gz
+#wget https://forge.glpi-project.org/attachments/download/2316/glpi-behaviors-2.4.1.tar.gz
+wget https://forge.glpi-project.org/attachments/download/2336/glpi-behaviors-2.5.0.tar.gz
 tar -xzf *.tar.gz
 cp -r behaviors /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
@@ -45,8 +45,8 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/fusioninventory/fusioninventory-for-glpi/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-#wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.4%2B2.3/fusioninventory-9.4+2.3.tar.bz2
-wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5.0%2B1.0/fusioninventory-9.5.0+1.0.tar.bz2
+#wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5.0%2B1.0/fusioninventory-9.5.0+1.0.tar.bz2
+wget https://github.com/fusioninventory/fusioninventory-for-glpi/releases/download/glpi9.5%2B3.0/fusioninventory-9.5+3.0.tar.bz2
 tar xjf *.tar.bz2
 cp -r fusioninventory /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
