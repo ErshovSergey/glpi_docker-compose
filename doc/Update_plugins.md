@@ -395,7 +395,17 @@ rm -rf /plugins_update && cd /
 mkdir /plugins_update && cd /plugins_update
 wget https://github.com/InfotelGLPI/positions/releases/download/5.0.0/glpi-positions-5.0.0.tar.gz
 tar xzf *.tar.gz
-mv glpi-karastock-1.1 /var/www/html/glpi/plugins/karastock
+cp -R positions /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
+
+#### cmdb
+[оф.сайт](https://github.com/InfotelGLPI/cmdb) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/cmdb/releases/download/2.2.1/glpi-cmdb-2.2.1.tar.gz
+tar xzf *.tar.gz
 cp -R positions /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
