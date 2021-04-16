@@ -382,9 +382,9 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/karhel/glpi-karastock/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/karhel/glpi-karastock/archive/refs/tags/1.1.tar.gz
+wget https://github.com/karhel/glpi-karastock/archive/refs/tags/1.2.1.tar.gz
 tar xzf *.tar.gz
-mv glpi-karastock-1.1 /var/www/html/glpi/plugins/karastock
+cp -R glpi-karastock-* /var/www/html/glpi/plugins/karastock
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
