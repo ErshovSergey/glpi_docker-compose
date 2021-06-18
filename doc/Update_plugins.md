@@ -409,3 +409,13 @@ tar xzf *.tar.gz
 cp -R positions /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
+
+#### glpi-modifications
+[оф.сайт](https://github.com/stdonato/glpi-modifications) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/stdonato/glpi-modifications/archive/refs/tags/2.0.2.tar.gz
+tar xzf *.tar.gz
+cp -R glpi-modifications-2.0.2 /var/www/html/glpi/plugins/mod
+rm -rf /plugins_update && cd /
+```
