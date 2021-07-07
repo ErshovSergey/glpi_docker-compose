@@ -429,3 +429,13 @@ tar xzf *.tar.gz
 cp -R archibp /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
+
+#### glpi-dataflows
+[оф.сайт](https://github.com/ericferon/glpi-dataflows) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/ericferon/glpi-dataflows/releases/download/v2.2.3/dataflows-v2.2.3.tar.gz
+tar xzf *.tar.gz
+cp -R archibp /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
