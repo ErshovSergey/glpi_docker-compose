@@ -419,3 +419,13 @@ tar xzf *.tar.gz
 cp -R glpi-modifications-2.0.2 /var/www/html/glpi/plugins/mod
 rm -rf /plugins_update && cd /
 ```
+
+#### Archibp
+[оф.сайт](https://github.com/ericferon/glpi-archibp/releases/tag/v1.0.1) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/ericferon/glpi-archibp/releases/download/v1.0.1/archibp-v1.0.1.tar.gz
+tar xzf *.tar.gz
+cp -R archibp /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
