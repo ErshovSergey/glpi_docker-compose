@@ -434,8 +434,20 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/ericferon/glpi-dataflows) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/ericferon/glpi-dataflows/releases/download/v2.2.3/dataflows-v2.2.3.tar.gz
+wget https://github.com/cconard96/glpi-screenshot-plugin/archive/refs/tags/v1.1.4.tar.gz
 tar xzf *.tar.gz
 cp -R archibp /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
+
+#### FusionInventory
+[оф.сайт](https://github.com/fusioninventory/fusioninventory-for-glpi/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/cconard96/glpi-screenshot-plugin/archive/refs/tags/v1.1.4.tar.gz
+tar xzf *.tar.gz
+cp -vR glpi-screenshot-plugin-1.1.4 /var/www/html/glpi/plugins/screenshot
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
