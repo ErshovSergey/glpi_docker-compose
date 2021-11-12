@@ -451,3 +451,13 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
 
+#### Timesheet for GLPI
+[оф.сайт](https://github.com/99net/Timesheet) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/99net/Timesheet/archive/refs/tags/v1.0.2.tar.gz
+tar xzf *.tar.gz
+cp -vR glpi-screenshot-plugin-1.1.4 /var/www/html/glpi/plugins/screenshot
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
