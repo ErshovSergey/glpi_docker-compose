@@ -9,7 +9,7 @@
 В контейнере glpi  
 ```docker exec -ti <glpi-conteiner-name> bash```  
 Создаём временный каталог  
-```mkdir /glpi_update && /cd glpi_update```  
+```mkdir /glpi_update && cd /glpi_update```  
 
 #### Исходный код новой версии  
 На странице [github.com/glpi-project/glpi/releases](https://github.com/glpi-project/glpi/releases) выбираем нужный релиз и скачиваем его, например  
