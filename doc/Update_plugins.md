@@ -461,3 +461,14 @@ cp -vR Timesheet-1.0.2 /var/www/html/glpi/plugins/Timesheet
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 cd / && rm -rf /plugins_update
 ```
+
+#### tasklists for GLPI
+[оф.сайт](https://github.com/InfotelGLPI/tasklists) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/InfotelGLPI/tasklists/releases/download/1.6.2/glpi-tasklists-1.6.2.tar.gz
+tar xzf *.tar.gz
+cp -vR tasklists /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+cd / && rm -rf /plugins_update
+```
