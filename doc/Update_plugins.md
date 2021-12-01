@@ -92,7 +92,7 @@ rm -rf /plugins_update && cd /
 [оф.сайт](https://github.com/InfotelGLPI/positions/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-wget https://github.com/InfotelGLPI/positions/releases/download/4.6.0/glpi-positions-4.6.0.tar.gz
+wget https://github.com/InfotelGLPI/positions/releases/download/5.0.0/glpi-positions-5.0.0.tar.gz
 tar xzf *.tar.gz
 cp -r positions /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
