@@ -472,3 +472,15 @@ cp -vR tasklists /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 cd / && rm -rf /plugins_update
 ```
+
+## protocolsmanager  - Archibp - manage the business processes  
+[Оф.сайт](https://github.com/ericferon/glpi-archibp/releases/tag/v1.0.3)  
+### Порядок установки  
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/ericferon/glpi-archibp/releases/download/v1.0.3/archibp-v1.0.3.tar.gz
+tar xzf archibp-v*.tar.gz
+cp -R archibp /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
