@@ -36,7 +36,18 @@ mkdir /plugins_update && cd /plugins_update
 # wget https://github.com/InfotelGLPI/environment/releases/download/2.3.0/glpi-environment-2.3.0.tar.gz
 wget https://github.com/InfotelGLPI/environment/releases/download/2.4.1/glpi-environment-2.4.1.tar.gz
 tar -xzf *.tar.gz
-cp -r environment /var/www/html/glpi/plugins/
+mv renamer-0.85-1.0 /var/www/html/glpi/plugins/renamer
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
+
+####  GLPI Renamer  
+[оф.сайт](https://github.com/InfotelGLPI/environment/releases) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/pluginsGLPI/renamer/archive/refs/tags/0.85-1.0.tar.gz
+tar -xzf *.tar.gz
+mv cp -r environment /var/www/html/glpi/plugins/
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
