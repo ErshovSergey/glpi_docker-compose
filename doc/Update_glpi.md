@@ -45,8 +45,9 @@ Ctrl+D
 mysql_tzinfo_to_sql /usr/share/zoneinfo | mysql -p -u root mysql
 ```
 Перезапустить mysql  
-##### В контейнере glpi обновить таблицы  
-```
-docker exec -i -t glpi.container.name bash
-/var/www/html/glpi/bin/console glpi:migration:timestamps
-```
+##### В контейнере glpi обновить таблицы в контейнер  
+```cd /var/www/html/glpi/```  
+при ошибке *1 tables not migrated to InnoDB engine.*  
+```php bin/console glpi:migration:myisam_to_innodb```  
+при ошибке *3 columns are not compatible with timezones usage.*  
+```php bin/console glpi:migration:timestamps```  
