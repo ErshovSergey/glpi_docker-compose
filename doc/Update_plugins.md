@@ -29,14 +29,23 @@ chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
 
+#### procedimientos
+[оф.сайт](https://github.com/calidadcarm/procedimientos) с исходным кодом
+```
+mkdir /plugins_update && cd /plugins_update
+wget https://github.com/calidadcarm/procedimientos/archive/refs/tags/procedimientos_4.2.0.tar.gz
+tar -xzf *.tar.gz
+cp -r behaviors /var/www/html/glpi/plugins/
+chown -R www-data:www-data /var/www/html/glpi/plugins/
+rm -rf /plugins_update && cd /
+```
 #### Environment
 [оф.сайт](https://github.com/InfotelGLPI/environment/releases) с исходным кодом
 ```
 mkdir /plugins_update && cd /plugins_update
-# wget https://github.com/InfotelGLPI/environment/releases/download/2.3.0/glpi-environment-2.3.0.tar.gz
-wget https://github.com/InfotelGLPI/environment/releases/download/2.4.1/glpi-environment-2.4.1.tar.gz
+wget https://github.com/calidadcarm/procedimientos/archive/refs/tags/procedimientos_4.2.0.tar.gz
 tar -xzf *.tar.gz
-mv renamer-0.85-1.0 /var/www/html/glpi/plugins/renamer
+mv procedimientos-procedimientos_4.2.0 /var/www/html/glpi/plugins/procedimientos
 chown -R www-data:www-data /var/www/html/glpi/plugins/
 rm -rf /plugins_update && cd /
 ```
