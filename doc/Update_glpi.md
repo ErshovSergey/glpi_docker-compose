@@ -24,6 +24,7 @@ config, files, marketplace и plugins
 ```docker exec -i -t glpi10_glpi bash```  
     root@glpi:/# ```php /var/www/html/glpi/bin/console db:check_schema_integrity```  
     root@glpi:/# ```php /var/www/html/glpi/bin/console db:update```  
+    root@glpi:/# ```chown -R www-data:www-data /var/www/html```  
 Не забываем удалить файл  
     root@glpi:/# ```rm /var/www/html/glpi/install/install.php```  
 
