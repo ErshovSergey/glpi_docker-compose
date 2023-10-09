@@ -1,5 +1,6 @@
 
-### Обновление glpi  
+### Обновление glpi до версии 10
+по [мотивам](https://glpi-install.readthedocs.io/en/latest/update.html).  
 Останавливаем контейнеры.  
 Делаем резервную копию каталога с данными.  
 ```cp -r <Folder> /tmp/```  
