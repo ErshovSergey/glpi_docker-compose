@@ -35,3 +35,6 @@ config, files, marketplace и plugins
 ```/front/inventory.php```  
 - если при обращении к ```/front/inventory.php```получаем ```Inventory is disabled```, то включить  
 _/Домой/Администрирование/Оборудование/Включить инвентаризацию_  
+
+### Отсутсвует настройка списка  
+Добавить права на _Search result display(Показать результаты поиска)_ профилю пользователя.  
