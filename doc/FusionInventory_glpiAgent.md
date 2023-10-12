@@ -12,7 +12,7 @@ server = https://glpi.erchov.ru/glpi/plugins/fusioninventory/
 ```
 Запустить из командой строки  
 ```glpi-agent```  
-
+[Подробнее](https://glpi-agent.readthedocs.io/en/latest/usage.html) о режимах запуска
 
 ## FusionInventory - Установка на Debian  
 По  [мотивам](http://fusioninventory.org/documentation/agent/installation/linux/deb.html)  
