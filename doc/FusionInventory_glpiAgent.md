@@ -1,3 +1,19 @@
+## glpi-agent - Установка на Debian  
+Для установки запустить файл glpi-agent-1.5-linux-installer.pl  
+Файл можно взять на [https://github.com/glpi-project/glpi-agent/releases](https://github.com/glpi-project/glpi-agent/releases)  
+```wget https://github.com/glpi-project/glpi-agent/releases/download/1.5/glpi-agent-1.5-linux-installer.pl```  
+Запустить  
+```perl glpi-agent-1.5-linux-installer.pl```  
+Файл конфигурации  _/etc/glpi-agent/agent.cfg_
+```
+...
+server = https://glpi.erchov.ru/glpi/plugins/fusioninventory/
+...
+```
+Запустить из командой строки  
+```glpi-agent```  
+
+
 ## FusionInventory - Установка на Debian  
 По  [мотивам](http://fusioninventory.org/documentation/agent/installation/linux/deb.html)  
 Устанавливаем зависимости  
