@@ -31,6 +31,23 @@ fi
 
 #Modification du vhost par défaut
 echo -e "<VirtualHost *:80>\n\tDocumentRoot /var/www/html/glpi\n\n\tRedirect '/agent' 'https://yadi.sk/d/B5ovlJH33ZuTn2'\n\n\t<Directory /var/www/html/glpi>\n\t\tAllowOverride All\n\t\tOrder Allow,Deny\n\t\tAllow from all\n\t</Directory>\n\n\tErrorLog /var/log/apache2/error-glpi.log\n\tLogLevel warn\n\tCustomLog /var/log/apache2/access-glpi.log combined\n</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+cat > /etc/apache2/sites-available/000-default.conf << ENDOFFILE
+    DocumentRoot /var/www/html/glpi
+    <Directory /var/www/html/glpi>
+        Require all granted
+
+        RewriteEngine On
+
+        # Ensure authorization headers are passed to PHP.
+        # Some Apache configurations may filter them and break usage of API, CalDAV, ...
+        RewriteCond %{HTTP:Authorization} ^(.+)$
+        RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+        # Redirect all requests to GLPI router, unless file exists.
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ index.php [QSA,L]
+    </Directory>
+ENDOFFILE
 
 #Add scheduled task by cron
 echo MAILTO=\"\" > /var/spool/cron/crontabs/www-data
