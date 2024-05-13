@@ -32,8 +32,11 @@ fi
 #Modification du vhost par défaut
 echo -e "<VirtualHost *:80>\n\tDocumentRoot /var/www/html/glpi\n\n\tRedirect '/agent' 'https://yadi.sk/d/B5ovlJH33ZuTn2'\n\n\t<Directory /var/www/html/glpi>\n\t\tAllowOverride All\n\t\tOrder Allow,Deny\n\t\tAllow from all\n\t</Directory>\n\n\tErrorLog /var/log/apache2/error-glpi.log\n\tLogLevel warn\n\tCustomLog /var/log/apache2/access-glpi.log combined\n</VirtualHost>" > /etc/apache2/sites-available/000-default.conf
 cat > /etc/apache2/sites-available/000-default.conf << ENDOFFILE
-    DocumentRoot /var/www/html/glpi
-    <Directory /var/www/html/glpi>
+<VirtualHost _default_:80>
+    ServerName glpi.localhost
+    ServerAlias *
+    DocumentRoot /var/www/html/glpi/public
+    <Directory /var/www/html/glpi/public>
         Require all granted
 
         RewriteEngine On
@@ -46,8 +49,15 @@ cat > /etc/apache2/sites-available/000-default.conf << ENDOFFILE
         # Redirect all requests to GLPI router, unless file exists.
         RewriteCond %{REQUEST_FILENAME} !-f
         RewriteRule ^(.*)$ index.php [QSA,L]
+
     </Directory>
+    ErrorLog /var/log/apache2/error-glpi.log
+    LogLevel warn
+    CustomLog /var/log/apache2/access-glpi.log combined
+
+</VirtualHost>
 ENDOFFILE
+
 
 #Add scheduled task by cron
 echo MAILTO=\"\" > /var/spool/cron/crontabs/www-data
