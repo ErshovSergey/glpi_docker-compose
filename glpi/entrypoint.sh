@@ -61,7 +61,7 @@ ENDOFFILE
 
 #Add scheduled task by cron
 echo MAILTO=\"\" > /var/spool/cron/crontabs/www-data
-echo "*/5 * * * * /usr/bin/php /var/www/html/glpi/front/cron.php > /dev/null" >> /var/spool/cron/crontabs/www-data
+echo "*/1 * * * * /usr/bin/php /var/www/html/glpi/front/cron.php > /dev/null" >> /var/spool/cron/crontabs/www-data
 chmod 0600 /var/spool/cron/crontabs/www-data
 chown www-data:crontab /var/spool/cron/crontabs/www-data
 
